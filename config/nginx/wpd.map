@@ -1,0 +1,155 @@
+#
+# This File attempts to fix original MediaWiki links to redirect to static file
+#
+# This map was originally generated against namespace 0 and 108 from app1.production.wpdn on 2015-07-25
+#
+#    # From the MediaWiki installation;
+#    php maintenance/dumpBackup.php --full --filter=namespace:3000 > /home/renoirb/wpd_full.xml
+#
+#    # From a MediaWiki Converter clone;
+#    app/console mediawiki:summary --source-xml=dumps/wpd.xml --namespace-prefix=WPD
+#
+# See comments in docs.main.map for more details
+#
+# @author Renoir Boulanger <renoir@w3.org>
+#
+
+
+
+
+
+
+
+
+
+# Redirect loops
+
+
+
+
+
+
+
+
+
+# 1_nginx
+rewrite (?i)^/WPD/Analytics$ /WPD/Community/Meetings/Analytics break;
+rewrite (?i)^/WPD/Infrastructure/Components/WebPlatformDocsExtensionBundle$ /WPD/Infrastructure/Components/WebPlatformMediaWikiExtensionBundle break;
+rewrite (?i)^/WPD/Infrastructure/Deployment$ /WPD/WPD/Infrastructure/procedures/Deploying_code_changes break;
+rewrite (?i)^/WPD/Infrastructure/Extensions/CompaTables$ /WPD/Infrastructure/Components/CompaTables break;
+rewrite (?i)^/WPD/Infrastructure/MaintenanceWorkflow$ /WPD/Infrastructure/proposals/Maintenance_and_migration_workflows break;
+rewrite (?i)^/WPD/Infrastructure/Tasks$ /WPD/Infrastructure/proposals/Initial_infrastructure break;
+rewrite (?i)^/WPD/Management$ /WPD/Policy/Management break;
+rewrite (?i)^/WPD/Pillars$ /WPD/Policy/Pillars break;
+rewrite (?i)^/WPD/Proposals$ /WPD/Projects break;
+rewrite (?i)^/WPD/Proposals/accessibility$ /WPD/Projects/accessibility break;
+rewrite (?i)^/WPD/Proposals/translations$ /WPD/Projects/Translations break;
+rewrite (?i)^/WPD/Topics$ /WPD/Architecture/Topics break;
+rewrite (?i)^/WPD/WPD/Community/Meetings/Content$ /WPD/Community/Meetings/Content break;
+
+
+
+
+
+
+
+
+# 2_nginx_almost_same_casing
+rewrite (?i)^/WPD/Volunteer(\ |_)moderators$ /WPD/Volunteer_Moderators break;
+
+
+
+
+
+
+
+
+# 3_nginx_almost_same 1
+
+
+
+
+
+
+
+
+# 3_nginx_almost_same 2
+
+
+
+
+
+
+
+
+# 4_nginx_redirects_spaces
+rewrite (?i)^/WPD/Q&A(\ |_)FAQ$ /WPD/QA_FAQ break;
+rewrite (?i)^/WPD/Q&A(\ |_)Moderation(\ |_)Guide$ /WPD/QA_Moderation_Guide break;
+rewrite (?i)^/WPD/Beta(\ |_)Requirements$ /WPD/Proposals/Beta_Requirements break;
+rewrite (?i)^/WPD/Community/Task(\ |_)Force/Community$ /WPD/Community/Task_Force/Community_Development break;
+rewrite (?i)^/WPD/Community/Task(\ |_)Force/Template(\ |_)Corps$ /WPD/Community/Task_Force/Templates break;
+rewrite (?i)^/WPD/Community/Task(\ |_)Force/Templates$ /WPD/Templates break;
+rewrite (?i)^/WPD/Community(\ |_)Engagement(\ |_)Plan$ /WPD/Community/Community_Engagement_Plan break;
+rewrite (?i)^/WPD/Content/ContentList/Batch(\ |_)1$ /WPD/Content/Content_List/Batch_1 break;
+rewrite (?i)^/WPD/Content/Content(\ |_)List/Topic(\ |_)Pages$ /WPD/Content/Topic_Pages break;
+rewrite (?i)^/WPD/Content/Topic(\ |_)Hierarchy$ /WPD/Editors_Guide/Topic_Hierarchy break;
+rewrite (?i)^/WPD/Content(\ |_)Categories$ /WPD/Content/Content_Categories break;
+rewrite (?i)^/WPD/Content(\ |_)List/Topic(\ |_)Pages$ /WPD/Content/Topic_Pages break;
+rewrite (?i)^/WPD/Content(\ |_)Meetings$ /WPD/WPD/Community/Meetings/Content break;
+rewrite (?i)^/WPD/Content(\ |_)Requirements$ /WPD/Content/Content_List break;
+rewrite (?i)^/WPD/Content(\ |_)Requirements/Batch(\ |_)9$ /WPD/Content/Content_List/Batch_9 break;
+rewrite (?i)^/WPD/Content(\ |_)Requirements/Batch(\ |_)11$ /WPD/Content/Content_List/Batch_11 break;
+rewrite (?i)^/WPD/Content(\ |_)Requirements/Batch(\ |_)12$ /WPD/Content/Content_List/Batch_12 break;
+rewrite (?i)^/WPD/Content(\ |_)Requirements/Batch(\ |_)13$ /WPD/Content/Content_List/Batch_13 break;
+rewrite (?i)^/WPD/Content(\ |_)Requirements/Batch(\ |_)Example$ /WPD/Content/Content_List/Batch_Example break;
+rewrite (?i)^/WPD/Creating(\ |_)Pages$ /WPD/Creating_API_pages break;
+rewrite (?i)^/WPD/CSS(\ |_)Example(\ |_)Article$ /WPD/Example_Pages/CSS break;
+rewrite (?i)^/WPD/Design/Logo(\ |_)Branding(\ |_)Guidelines$ /WPD/Logo break;
+rewrite (?i)^/WPD/Design(\ |_)changes(\ |_)guide$ /WPD/Infrastructure/procedures/Design_changes_guide break;
+rewrite (?i)^/WPD/Editors(\ |_)Guide$ /WPD/Contributors_Guide break;
+rewrite (?i)^/WPD/Importing(\ |_)data$ /WPD/Infrastructure/Importing_data break;
+rewrite (?i)^/WPD/Infrastructure/Code(\ |_)Viewer$ /WPD/Infrastructure/Components/Code_Viewer break;
+rewrite (?i)^/WPD/Infrastructure/Git(\ |_)Examples$ /WPD/Infrastructure/proposals/Git_Examples break;
+rewrite (?i)^/WPD/Infrastructure/Importing(\ |_)data$ /WPD/WPD/Infrastructure/procedures/Importing_data_into_MediaWiki break;
+rewrite (?i)^/WPD/Infrastructure/Installing(\ |_)Vagrant(\ |_)with(\ |_)Salt(\ |_)stack$ /WPD/WPD/Infrastructure/procedures/Creating_local_multiple_Virtual_Machine_state_development_environment_using_Vagrant_and_Salt_stack break;
+rewrite (?i)^/WPD/Infrastructure/Logging(\ |_)aggregation(\ |_)and(\ |_)analytics$ /WPD/Infrastructure/proposals/Logging_aggregation_and_analytics break;
+rewrite (?i)^/WPD/Infrastructure/Piwik(\ |_)Tracking(\ |_)code(\ |_)installation$ /WPD/Infrastructure/procedures/Piwik_Tracking_code_installation break;
+rewrite (?i)^/WPD/Infrastructure/proposals/Content(\ |_)commenting(\ |_)system$ /WPD/Requirements/Content_commenting_system break;
+rewrite (?i)^/WPD/Infrastructure/proposals/Git(\ |_)Examples$ /WPD/Infrastructure/proposals/Content_commenting_system break;
+rewrite (?i)^/WPD/Infrastructure/proposals/Maintenance(\ |_)and(\ |_)migration(\ |_)workflows$ /WPD/Infrastructure/proposals/Maintenance_workflows break;
+rewrite (?i)^/WPD/Infrastructure/Site(\ |_)Map$ /WPD/Infrastructure/proposals/Site_Map break;
+rewrite (?i)^/WPD/Infrastructure/Site(\ |_)status(\ |_)problem(\ |_)notification(\ |_)messages$ /WPD/Infrastructure/proposals/Site_status_problem_notification_messages break;
+rewrite (?i)^/WPD/Infrastructure/Testing(\ |_)service(\ |_)availability$ /WPD/Infrastructure/procedures/Testing_service_availability break;
+rewrite (?i)^/WPD/Infrastructure/Things(\ |_)to(\ |_)ensure(\ |_)is(\ |_)not(\ |_)changed$ /WPD/Infrastructure/analysis/Things_to_ensure_is_not_changed break;
+rewrite (?i)^/WPD/Manual(\ |_)Of(\ |_)Style$ /WPD/Style_Guide break;
+rewrite (?i)^/WPD/Manual(\ |_)Of(\ |_)Style/Gotchas$ /WPD/Style_Guide/Gotchas break;
+rewrite (?i)^/WPD/Manual(\ |_)Of(\ |_)Style/Sample(\ |_)best(\ |_)practices$ /WPD/Manual_Of_Style/Code_sample_best_practices break;
+rewrite (?i)^/WPD/Manual(\ |_)Of(\ |_)Style/Tables$ /WPD/Style_Manual/Tables break;
+rewrite (?i)^/WPD/Projects/css(\ |_)prop(\ |_)enhancements$ /WPD/Proposals/CSS_Property_Milestone/css_prop_enhancements break;
+rewrite (?i)^/WPD/Projects/June2014(\ |_)QA(\ |_)Sprint$ /WPD/Projects/QASprints/2014-june break;
+rewrite (?i)^/WPD/Proposals/api(\ |_)docs$ /WPD/Projects/api_docs break;
+rewrite (?i)^/WPD/Proposals/Beta(\ |_)Requirements$ /WPD/Projects/Beta_Requirements break;
+rewrite (?i)^/WPD/Proposals/css(\ |_)prop(\ |_)enhancements$ /WPD/Projects/css_prop_enhancements break;
+rewrite (?i)^/WPD/Proposals/CSS(\ |_)Property(\ |_)Milestone$ /WPD/Projects/CSS_Property_Milestone break;
+rewrite (?i)^/WPD/Proposals/CSS(\ |_)Property(\ |_)Milestone/css(\ |_)prop(\ |_)enhancements$ /WPD/Projects/CSS_Property_Milestone/css_prop_enhancements break;
+rewrite (?i)^/WPD/Proposals/CSS(\ |_)Property(\ |_)Milestone/css(\ |_)prop(\ |_)enhancements/test/css(\ |_)properties(\ |_)display$ /WPD/Projects/CSS_Property_Milestone/css_prop_enhancements/test/css_properties_display break;
+rewrite (?i)^/WPD/Proposals/DOM(\ |_)API(\ |_)docs$ /WPD/Projects/DOM_API_docs break;
+rewrite (?i)^/WPD/Proposals/editors(\ |_)guide$ /WPD/Projects/editors_guide break;
+rewrite (?i)^/WPD/Proposals/editors(\ |_)guide/template(\ |_)test$ /WPD/Projects/editors_guide/template_test break;
+rewrite (?i)^/WPD/Proposals/Organizing(\ |_)projects$ /WPD/Projects/Organizing_projects break;
+rewrite (?i)^/WPD/Proposals/spec(\ |_)status(\ |_)representation$ /WPD/Projects/spec_status_representation break;
+rewrite (?i)^/WPD/Site(\ |_)Features$ /WPD/Tasks break;
+rewrite (?i)^/WPD/Site(\ |_)Map$ /WPD/Infrastructure/Site_Map break;
+rewrite (?i)^/WPD/Site(\ |_)Wishlist$ /WPD/Site/Wishlist break;
+rewrite (?i)^/WPD/Style(\ |_)Manual$ /WPD/Style_Guide break;
+rewrite (?i)^/WPD/Style(\ |_)Manual/Tables$ /WPD/Style_Guide/Tables break;
+rewrite (?i)^/WPD/sxsw(\ |_)talk(\ |_)proposal$ /WPD/Projects/SXSW_2012_Talk_proposal break;
+rewrite (?i)^/WPD/Tasks/CSS(\ |_)Property(\ |_)Milestone$ /WPD/Proposals/CSS_Property_Milestone break;
+rewrite (?i)^/WPD/Technical(\ |_)Requirements$ /WPD/Site/Technical_Requirements break;
+rewrite (?i)^/WPD/Template(\ |_)Corps$ /WPD/Community/Task_Force/Template_Corps break;
+rewrite (?i)^/WPD/Templates/Readiness(\ |_)Markers$ /WPD/Content/Readiness_Markers break;
+rewrite (?i)^/WPD/To-Do(\ |_)List$ /WPD/Most_Wanted_Tasks break;
+rewrite (?i)^/WPD/WPD/Infrastructure/procedures/Creating(\ |_)local(\ |_)multiple(\ |_)Virtual(\ |_)Machine(\ |_)state(\ |_)development(\ |_)environment(\ |_)using(\ |_)Vagrant(\ |_)and(\ |_)Salt(\ |_)stack$ /WPD/Infrastructure/procedures/Creating_local_multiple_Virtual_Machine_state_development_environment_using_Vagrant_and_Salt_stack break;
+rewrite (?i)^/WPD/WPD/Infrastructure/procedures/Deploying(\ |_)code(\ |_)changes$ /WPD/Infrastructure/procedures/Deploying_code_changes break;
+rewrite (?i)^/WPD/WPD/Infrastructure/procedures/Importing(\ |_)data(\ |_)into(\ |_)MediaWiki$ /WPD/Infrastructure/procedures/Importing_data_into_MediaWiki break;
+rewrite (?i)^/WPD/WPD/Infrastructure/procedures/Typical(\ |_)wiki(\ |_)maintenance(\ |_)tasks$ /WPD/Infrastructure/procedures/Typical_wiki_maintenance_tasks break;

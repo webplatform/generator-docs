@@ -1,0 +1,601 @@
+#
+# This File attempts to fix original MediaWiki links to redirect to static files
+#
+# Any document created after the migration MUST be valid URL that can be stored without potential problems
+# on a file system (i.e. consistent casing, no spaces, nor any special characters ?&!()[]:).
+#
+# This map was originally generated using webplatform/mediawiki-conversion[1] project on GitHub and written into
+# reports/nginx_redirects.map
+#
+# This file was generated against namespace 0 and 108 from app1.production.wpdn on 2015-07-
+#
+#    # From the MediaWiki installation;
+#    php maintenance/dumpBackup.php --full --filter=namespace:0,108 > /home/renoirb/main_full.xml
+#
+#    # From a MediaWiki Converter clone;
+#    app/console mediawiki:summary
+#
+# Once generated, it has been manually edited to remove duplicates and had attempts to fix redirect loops.
+#
+# [1]: https://github.com/webplatform/mediawiki-conversion
+#
+# @author Renoir Boulanger <renoir@w3.org>
+#
+
+
+
+
+
+
+
+
+
+# Redirect loops
+rewrite (?i)^/after$ /css/selectors/pseudo-elements/after permanent;
+rewrite (?i)^/tutorials/What(\ |_)is(\ |_)CSS(\?|)$ /tutorials/learning_what_css_is permanent;
+rewrite (?i)^/tutorials/learning\ what\ css\ is$ /tutorials/learning_what_css_is permanent;
+rewrite (?i)^/html/attributes/type(\ |_)type(\ |_)\(a,(\ |_)link,(\ |_)embed\)$ /html/attributes/type permanent;
+
+
+
+
+
+
+
+
+
+# Potential casing mess
+rewrite (?i)^/concepts/Detecting_device_and_browser$ /concepts/Detecting_device_and_browser break;
+rewrite (?i)^/concepts/IA$ /concepts/IA break;
+rewrite (?i)^/concepts/Internet_and_Web$ /concepts/Internet_and_Web break;
+rewrite (?i)^/concepts/IntrotoArt$ /concepts/IntrotoArt break;
+rewrite (?i)^/concepts/Pointer_Events$ /concepts/Pointer_Events break;
+rewrite (?i)^/concepts/VTT_Captioning$ /concepts/VTT_Captioning break;
+rewrite (?i)^/concepts/accessibility$ /concepts/accessibility break;
+rewrite (?i)^/concepts/an_introduction_to_web_design$ /concepts/an_introduction_to_web_design break;
+rewrite (?i)^/concepts/color_theory$ /concepts/color_theory break;
+rewrite (?i)^/concepts/creating_prototypes$ /concepts/creating_prototypes break;
+rewrite (?i)^/concepts/cross_browser_techniques$ /concepts/cross_browser_techniques break;
+rewrite (?i)^/concepts/design_theory$ /concepts/design_theory break;
+rewrite (?i)^/concepts/domain_names$ /concepts/domain_names break;
+rewrite (?i)^/concepts/experimental_features$ /concepts/experimental_features break;
+rewrite (?i)^/concepts/general_programming$ /concepts/general_programming break;
+rewrite (?i)^/concepts/graceful_degradation$ /concepts/graceful_degradation break;
+rewrite (?i)^/concepts/ia_and_usability$ /concepts/ia_and_usability break;
+rewrite (?i)^/concepts/information_architecture$ /concepts/information_architecture break;
+rewrite (?i)^/concepts/internationalization$ /concepts/internationalization break;
+rewrite (?i)^/concepts/internet_web$ /concepts/internet_web break;
+rewrite (?i)^/concepts/javascript$ /concepts/javascript break;
+rewrite (?i)^/concepts/mobile_web$ /concepts/mobile_web break;
+rewrite (?i)^/concepts/network_architecture$ /concepts/network_architecture break;
+rewrite (?i)^/concepts/one_web$ /concepts/one_web break;
+rewrite (?i)^/concepts/performance$ /concepts/performance break;
+rewrite (?i)^/concepts/polyfill$ /concepts/polyfill break;
+rewrite (?i)^/concepts/programming$ /concepts/programming break;
+rewrite (?i)^/concepts/progressive_enhancement$ /concepts/progressive_enhancement break;
+rewrite (?i)^/concepts/proprietary_internet_explorer_techniques$ /concepts/proprietary_internet_explorer_techniques break;
+rewrite (?i)^/concepts/protocols$ /concepts/protocols break;
+rewrite (?i)^/concepts/redirect_no_javascript$ /concepts/redirect_no_javascript break;
+rewrite (?i)^/concepts/responsive$ /concepts/responsive break;
+rewrite (?i)^/concepts/security$ /concepts/security break;
+rewrite (?i)^/concepts/ux$ /concepts/ux break;
+rewrite (?i)^/concepts/web_design$ /concepts/web_design break;
+rewrite (?i)^/concepts/web_typography$ /concepts/web_typography break;
+rewrite (?i)^/concepts/wireframing_a_site$ /concepts/wireframing_a_site break;
+
+
+
+
+
+
+
+
+# 1_nginx.map
+rewrite (?i)^/css/atrules/@charset$ /css/atrules/charset break;
+rewrite (?i)^/css/atrules/@font-face$ /css/atrules/font-face break;
+rewrite (?i)^/css/atrules/@import$ /css/atrules/import break;
+rewrite (?i)^/css/atrules/@keyframes$ /css/atrules/keyframes break;
+rewrite (?i)^/css/atrules/@media$ /css/atrules/media break;
+rewrite (?i)^/css/atrules/@namespace$ /css/atrules/namespace break;
+rewrite (?i)^/css/atrules/@page$ /css/atrules/page break;
+rewrite (?i)^/css/atrules/@region$ /css/atrules/region break;
+rewrite (?i)^/css/atrules/@supports$ /css/atrules/supports break;
+rewrite (?i)^/css/atrules/@viewport$ /css/atrules/viewport break;
+rewrite (?i)^/css/functions/matrix\(\)$ /css/functions/matrix break;
+rewrite (?i)^/css/functions/rotate\(\)$ /css/functions/rotate break;
+rewrite (?i)^/css/functions/rotate3d\(\)$ /css/functions/rotate3d break;
+rewrite (?i)^/css/functions/rotateX\(\)$ /css/functions/rotateX break;
+rewrite (?i)^/css/functions/rotateY\(\)$ /css/functions/rotateY break;
+rewrite (?i)^/css/functions/rotateZ\(\)$ /css/functions/rotateZ break;
+rewrite (?i)^/css/functions/scale\(\)$ /css/functions/scale break;
+rewrite (?i)^/css/functions/scale3d\(\)$ /css/functions/scale3d break;
+rewrite (?i)^/css/functions/scaleX\(\)$ /css/functions/scaleX break;
+rewrite (?i)^/css/functions/scaleY\(\)$ /css/functions/scaleY break;
+rewrite (?i)^/css/functions/scaleZ\(\)$ /css/functions/scaleZ break;
+rewrite (?i)^/css/functions/skew\(\)$ /css/functions/skew break;
+rewrite (?i)^/css/functions/skewX\(\)$ /css/functions/skewX break;
+rewrite (?i)^/css/functions/skewY\(\)$ /css/functions/skewY break;
+rewrite (?i)^/css/functions/translate\(\)$ /css/functions/translate break;
+rewrite (?i)^/css/functions/translate3d\(\)$ /css/functions/translate3d break;
+rewrite (?i)^/css/functions/translateX\(\)$ /css/functions/translateX break;
+rewrite (?i)^/css/functions/translateY\(\)$ /css/functions/translateY break;
+rewrite (?i)^/css/functions/translateZ\(\)$ /css/functions/translateZ break;
+rewrite (?i)^/css/functions/url\(\)$ /css/functions/url break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:-ms-input-placeholder$ /css/selectors/pseudo-classes/-ms-input-placeholder break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:active$ /css/selectors/pseudo-classes/active break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:checked$ /css/selectors/pseudo-classes/checked break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:disabled$ /css/selectors/pseudo-classes/disabled break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:empty$ /css/selectors/pseudo-classes/empty break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:enabled$ /css/selectors/pseudo-classes/enabled break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:first-child$ /css/selectors/pseudo-classes/first-child break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:first-of-type$ /css/selectors/pseudo-classes/first-of-type break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:focus$ /css/selectors/pseudo-classes/focus break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:hover$ /css/selectors/pseudo-classes/hover break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:in-range$ /css/selectors/pseudo-classes/in-range break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:indeterminate$ /css/selectors/pseudo-classes/indeterminate break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:invalid$ /css/selectors/pseudo-classes/invalid break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:lang\(c\)$ /css/selectors/pseudo-classes/lang break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:last-child$ /css/selectors/pseudo-classes/last-child break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:last-of-type$ /css/selectors/pseudo-classes/last-of-type break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:link$ /css/selectors/pseudo-classes/link break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:not$ /css/selectors/pseudo-classes/not break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:nth-child\(n\)$ /css/selectors/pseudo-classes/nth-child break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:nth-last-child\(n\)$ /css/selectors/pseudo-classes/nth-last-child break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:nth-last-of-type\(n\)$ /css/selectors/pseudo-classes/nth-last-of-type break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:nth-of-type\(n\)$ /css/selectors/pseudo-classes/nth-of-type break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:only-child$ /css/selectors/pseudo-classes/only-child break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:only-of-type$ /css/selectors/pseudo-classes/only-of-type break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:optional$ /css/selectors/pseudo-classes/optional break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:required$ /css/selectors/pseudo-classes/required break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:root$ /css/selectors/pseudo-classes/root break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:target$ /css/selectors/pseudo-classes/target break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:valid$ /css/selectors/pseudo-classes/valid break;
+rewrite (?i)^/css/selectors/pseudo-classes/\:visited$ /css/selectors/pseudo-classes/visited break;
+rewrite (?i)^/css/selectors/pseudo-elements/\:\:after$ /css/selectors/pseudo-elements/after break;
+rewrite (?i)^/css/selectors/pseudo-elements/\:\:before$ /css/selectors/pseudo-elements/before break;
+rewrite (?i)^/css/selectors/pseudo-elements/\:\:first-letter$ /css/selectors/pseudo-elements/first-letter break;
+rewrite (?i)^/css/selectors/pseudo-elements/\:\:first-line$ /css/selectors/pseudo-elements/first-line break;
+rewrite (?i)^/css/selectors/pseudo-elements/\:\:region$ /css/selectors/pseudo-elements/region break;
+rewrite (?i)^/css/selectors/pseudo-elements/\:\:selection$ /css/selectors/pseudo-elements/selection break;
+rewrite (?i)^/css/syntax/!important$ /css/syntax/important break;
+rewrite (?i)^/html/attributes/max\(HTMLProgressElement\)$ /html/attributes/maxHTMLProgressElement break;
+rewrite (?i)^/html/elements/!DOCTYPE$ /html/elements/DOCTYPE break;
+rewrite (?i)^/html/elements/!DOCTYPE/ja$ /html/elements/DOCTYPE/ja break;
+rewrite (?i)^/Accept$ /http/headers/Accept break;
+rewrite (?i)^/apis/css-regions/NamedFlow/regionlayoutupdate$ /apis/css-regions/NamedFlow/regionfragmentchange break;
+rewrite (?i)^/apis/indexeddb/IDBCuror/update$ /apis/indexeddb/IDBCursor/update break;
+rewrite (?i)^/apis/pointerevents/PointerEvent$ /dom/objects/PointerEvent break;
+rewrite (?i)^/apis/timing/methods/requestAnimationFrame$ /dom/Window/requestAnimationFrame break;
+rewrite (?i)^/apis/timing/properties/domContentLoadedEventEnd$ /apis/navigation_timing/PerformanceTiming/domContentLoadedEventEnd break;
+rewrite (?i)^/apis/webrtc/objects/MediaStream/properties/videoTracks$ /apis/webrtc/MediaStream/videoTracks break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack$ /apis/webrtc/MediaStreamTrack break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack/events/ended$ /apis/webrtc/MediaStreamTrack/ended break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack/events/muted$ /apis/webrtc/MediaStreamTrack/muted break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack/events/unmuted$ /apis/webrtc/MediaStreamTrack/unmuted break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack/properties/enabled$ /apis/webrtc/MediaStreamTrack/enabled break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack/properties/kind$ /apis/webrtc/MediaStreamTrack/kind break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack/properties/label$ /apis/webrtc/MediaStreamTrack/label break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack/properties/onended$ /apis/webrtc/MediaStreamTrack/onended break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack/properties/onmute$ /apis/webrtc/MediaStreamTrack/onmute break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrack/properties/readyState$ /apis/webrtc/MediaStreamTrack/readyState break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrackList$ /apis/webrtc/MediaStreamTrackList break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrackList/events/addtrack$ /apis/webrtc/MediaStreamTrackList/addtrack break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrackList/events/removetrack$ /apis/webrtc/MediaStreamTrackList/removetrack break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrackList/methods/add$ /apis/webrtc/MediaStreamTrackList/add break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrackList/methods/item$ /apis/webrtc/MediaStreamTrackList/item break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrackList/methods/remove$ /apis/webrtc/MediaStreamTrackList/remove break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrackList/properties/length$ /apis/webrtc/MediaStreamTrackList/length break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrackList/properties/onaddtrack$ /apis/webrtc/MediaStreamTrackList/onaddtrack break;
+rewrite (?i)^/apis/webrtc/objects/MediaStreamTrackList/properties/onremovetrack$ /apis/webrtc/MediaStreamTrackList/onremovetrack break;
+rewrite (?i)^/apis/websockets/CloseEvent$ /apis/websocket/CloseEvent break;
+rewrite (?i)^/apis/websockets/CloseEvent/code$ /apis/websocket/CloseEvent/code break;
+rewrite (?i)^/apis/websockets/CloseEvent/reason$ /apis/websocket/CloseEvent/reason break;
+rewrite (?i)^/apis/websockets/CloseEvent/wasClean$ /apis/websocket/CloseEvent/wasClean break;
+rewrite (?i)^/apis/websockets/MessageEvent$ /apis/websocket/MessageEvent break;
+rewrite (?i)^/apis/websockets/MessageEvent/data$ /apis/websocket/MessageEvent/data break;
+rewrite (?i)^/A(\ |_)Quick(\ |_)Start(\ |_)to(\ |_)getting(\ |_)started(\ |_)contributing(\ |_)to(\ |_)Web(\ |_)Platform.org$ /WPD/Quick_Start break;
+rewrite (?i)^/bdi$ /html/elements/bdi break;
+rewrite (?i)^/border-image$ /css/properties/border-image break;
+rewrite (?i)^/canvas$ /html/elements/canvas break;
+rewrite (?i)^/concepts/localisation$ /concepts/internationalization break;
+rewrite (?i)^/concepts/PointerEvents$ /concepts/Pointer_Events break;
+rewrite (?i)^/concepts/proprietary-ie-techniques$ /concepts/proprietary_internet_explorer_techniques break;
+rewrite (?i)^/cross-fade$ /css/functions/cross-fade break;
+rewrite (?i)^/css/atrules/-ms-viewport$ /css/atrules/viewport break;
+rewrite (?i)^/css/cross-fade$ /css/functions/cross-fade break;
+rewrite (?i)^/css/cssom/CSSRegionStyleRule$ /OLDcss/cssom/CSSRegionStyleRule break;
+rewrite (?i)^/css/cssom/CSSRule/CSSRule$ /css/cssom/CSSRule break;
+rewrite (?i)^/css/cssom/methods/removeImport$ /css/cssom/styleSheet/removeImport break;
+rewrite (?i)^/css/cssom/methods/removeProperty$ /css/cssom/CSSStyleDeclaration/removeProperty break;
+rewrite (?i)^/css/cssom/methods/removeRule$ /css/cssom/styleSheet/removeRule break;
+rewrite (?i)^/css/cssom/methods/setProperty$ /css/cssom/CSSStyleDeclaration/setProperty break;
+rewrite (?i)^/css/cssom/NamedFlow$ /apis/css-regions/NamedFlow break;
+rewrite (?i)^/css/cssom/NamedFlow/firstEmptyRegionIndex$ /apis/css-regions/NamedFlow/firstEmptyRegionIndex break;
+rewrite (?i)^/css/cssom/NamedFlow/getContent$ /apis/css-regions/NamedFlow/getContent break;
+rewrite (?i)^/css/cssom/NamedFlow/getNamedFlows$ /apis/css-regions/NamedFlow/getNamedFlows break;
+rewrite (?i)^/css/cssom/NamedFlow/getRegions$ /apis/css-regions/NamedFlow/getRegions break;
+rewrite (?i)^/css/cssom/NamedFlow/getRegionsByContent$ /apis/css-regions/NamedFlow/getRegionsByContent break;
+rewrite (?i)^/css/cssom/NamedFlow/name$ /apis/css-regions/NamedFlow/name break;
+rewrite (?i)^/css/cssom/NamedFlow/overset$ /apis/css-regions/NamedFlow/overset break;
+rewrite (?i)^/css/cssom/NamedFlow/regionlayoutupdate$ /apis/css-regions/NamedFlow/regionlayoutupdate break;
+rewrite (?i)^/css/cssom/Region$ /apis/css-regions/Region break;
+rewrite (?i)^/css/cssom/Region/getComputedRegionStyle$ /apis/css-regions/Region/getComputedRegionStyle break;
+rewrite (?i)^/css/cssom/Region/getRegionFlowRanges$ /apis/css-regions/Region/getRegionFlowRanges break;
+rewrite (?i)^/css/cssom/Region/regionOverset$ /apis/css-regions/Region/regionOverset break;
+rewrite (?i)^/css/flexbox$ /css/properties/flex break;
+rewrite (?i)^/css/functions/transition-timing-function$ /css/properties/transition-timing-function break;
+rewrite (?i)^/css/linear-gradient$ /css/functions/linear-gradient break;
+rewrite (?i)^/css/properties/-ms-block-progression$ /css/properties/block-progression break;
+rewrite (?i)^/css/properties/-ms-box-align$ /css/properties/box-align break;
+rewrite (?i)^/css/properties/-ms-box-direction$ /css/properties/box-direction break;
+rewrite (?i)^/css/properties/-ms-box-flex$ /css/properties/box-flex break;
+rewrite (?i)^/css/properties/-ms-box-line-progression$ /css/properties/box-line-progression break;
+rewrite (?i)^/css/properties/-ms-box-lines$ /css/properties/box-lines break;
+rewrite (?i)^/css/properties/-ms-box-ordinal-group$ /css/properties/box-ordinal-group break;
+rewrite (?i)^/css/properties/-ms-box-pack$ /css/properties/box-pack break;
+rewrite (?i)^/css/properties/-ms-content-zoom-factor$ /css/properties/msContentZoomFactor break;
+rewrite (?i)^/css/properties/-ms-flex-align$ /css/properties/flex-align break;
+rewrite (?i)^/css/properties/-ms-flex-item-align$ /css/properties/flex-item-align break;
+rewrite (?i)^/css/properties/-ms-flex-line-pack$ /css/properties/flex-line-pack break;
+rewrite (?i)^/css/properties/-ms-flex-order$ /css/properties/flex-order break;
+rewrite (?i)^/css/properties/-ms-flex-pack$ /css/properties/justify-content break;
+rewrite (?i)^/css/properties/-ms-linear-gradient$ /css/functions/linear-gradient break;
+rewrite (?i)^/css/properties/animation/animation$ /css/properties/animation break;
+rewrite (?i)^/css/properties/box-align$ /css/properties/align-items break;
+rewrite (?i)^/css/properties/flex-align$ /css/properties/align-items break;
+rewrite (?i)^/css/properties/flex-item-align$ /css/properties/align-self break;
+rewrite (?i)^/css/properties/flex-line-pack$ /css/properties/align-content break;
+rewrite (?i)^/css/properties/flex-order$ /css/properties/order break;
+rewrite (?i)^/css/properties/flex-pack$ /css/properties/justify-content break;
+rewrite (?i)^/css/properties/foo$ /css/properties/grid-row break;
+rewrite (?i)^/css/properties/mask-border-image$ /css/properties/mask-border break;
+rewrite (?i)^/css/properties/mask-box-image$ /css/properties/mask-border-image break;
+rewrite (?i)^/css/properties/mask-box-image-outset$ /css/properties/mask-border-outset break;
+rewrite (?i)^/css/properties/mask-box-image-repeat$ /css/properties/mask-border-repeat break;
+rewrite (?i)^/css/properties/mask-box-image-slice$ /css/properties/mask-border-slice break;
+rewrite (?i)^/css/properties/mask-box-image-source$ /css/properties/mask-border-source break;
+rewrite (?i)^/css/properties/mask-box-image-width$ /css/properties/mask-border-width break;
+rewrite (?i)^/css/properties/mask-source-type$ /css/properties/mask-mode break;
+rewrite (?i)^/css/properties/ms-block-progression$ /css/properties/-ms-block-progression break;
+rewrite (?i)^/css/properties/ms-box-align$ /css/properties/-ms-box-align break;
+rewrite (?i)^/css/properties/ms-box-direction$ /css/properties/-ms-box-direction break;
+rewrite (?i)^/css/properties/ms-box-flex$ /css/properties/-ms-box-flex break;
+rewrite (?i)^/css/properties/ms-box-line-progression$ /css/properties/-ms-box-line-progression break;
+rewrite (?i)^/css/properties/ms-box-lines$ /css/properties/-ms-box-lines break;
+rewrite (?i)^/css/properties/ms-box-ordinal-group$ /css/properties/-ms-box-ordinal-group break;
+rewrite (?i)^/css/properties/ms-box-orient$ /css/properties/-ms-box-orient break;
+rewrite (?i)^/css/properties/ms-box-pack$ /css/properties/-ms-box-pack break;
+rewrite (?i)^/css/properties/ms-content-zoom-chaining$ /css/properties/-ms-content-zoom-chaining break;
+rewrite (?i)^/css/properties/ms-content-zoom-factor$ /css/properties/msContentZoomFactor break;
+rewrite (?i)^/css/properties/ms-content-zoom-limit$ /css/properties/-ms-content-zoom-limit break;
+rewrite (?i)^/css/properties/ms-content-zoom-limit-max$ /css/properties/-ms-content-zoom-limit-max break;
+rewrite (?i)^/css/properties/ms-content-zoom-limit-min$ /css/properties/-ms-content-zoom-limit-min break;
+rewrite (?i)^/css/properties/ms-content-zoom-snap$ /css/properties/-ms-content-zoom-snap break;
+rewrite (?i)^/css/properties/ms-content-zoom-snap-points$ /css/properties/-ms-content-zoom-snap-points break;
+rewrite (?i)^/css/properties/ms-content-zoom-snap-type$ /css/properties/-ms-content-zoom-snap-type break;
+rewrite (?i)^/css/properties/ms-content-zooming$ /css/properties/-ms-content-zooming break;
+rewrite (?i)^/css/properties/ms-flex$ /css/properties/-ms-flex break;
+rewrite (?i)^/css/properties/ms-flex-align$ /css/properties/-ms-flex-align break;
+rewrite (?i)^/css/properties/ms-flex-direction$ /css/properties/-ms-flex-direction break;
+rewrite (?i)^/css/properties/ms-flex-flow$ /css/properties/-ms-flex-flow break;
+rewrite (?i)^/css/properties/ms-flex-item-align$ /css/properties/-ms-flex-item-align break;
+rewrite (?i)^/css/properties/ms-flex-line-pack$ /css/properties/-ms-flex-line-pack break;
+rewrite (?i)^/css/properties/ms-flex-order$ /css/properties/-ms-flex-order break;
+rewrite (?i)^/css/properties/ms-flex-pack$ /css/properties/-ms-flex-pack break;
+rewrite (?i)^/css/properties/ms-flex-wrap$ /css/properties/-ms-flex-wrap break;
+rewrite (?i)^/css/properties/ms-grid-column$ /css/properties/grid-column break;
+rewrite (?i)^/css/properties/ms-grid-column-span$ /css/properties/grid-column-span break;
+rewrite (?i)^/css/properties/ms-hyphenate-limit-lines$ /css/properties/hyphenate-limit-lines break;
+rewrite (?i)^/css/properties/ms-hyphens$ /css/properties/hyphens break;
+rewrite (?i)^/css/properties/ms-touch-action$ /css/properties/-ms-touch-action break;
+rewrite (?i)^/css/properties/region-break-after$ /css/properties/break-after break;
+rewrite (?i)^/css/properties/region-break-before$ /css/properties/break-before break;
+rewrite (?i)^/css/properties/region-break-inside$ /css/properties/break-inside break;
+rewrite (?i)^/css/properties/region-overflow$ /css/properties/region-fragment break;
+rewrite (?i)^/css/properties/region-verflow$ /css/properties/region-overflow break;
+rewrite (?i)^/css/radial-gradient$ /css/functions/radial-gradient break;
+rewrite (?i)^/css/repeating-linear-gradient$ /css/functions/repeating-linear-gradient break;
+rewrite (?i)^/css/repeating-radial-gradient$ /css/functions/repeating-radial-gradient break;
+rewrite (?i)^/css/selectors/-ms-scrollbar-shadow-color$ /css/properties/-ms-scrollbar-shadow-color break;
+rewrite (?i)^/css/selectors/border-image$ /css/properties/border-image break;
+rewrite (?i)^/css/selectors/cursor$ /css/properties/cursor break;
+rewrite (?i)^/css/selectors/outline$ /css/properties/outline break;
+rewrite (?i)^/css/selectors/outline-color$ /css/properties/outline-color break;
+rewrite (?i)^/css/selectors/outline-style$ /css/properties/outline-style break;
+rewrite (?i)^/css/selectors/outline-width$ /css/properties/outline-width break;
+rewrite (?i)^/css/selectors/user-select$ /css/properties/user-select break;
+rewrite (?i)^/css/selectors/zoom$ /css/properties/zoom break;
+rewrite (?i)^/css/text/word-spacing/word-spacing$ /css/properties/word-spacing break;
+rewrite (?i)^/css/Training$ /css/tutorials break;
+rewrite (?i)^/css/transforms$ /css/properties/transform break;
+rewrite (?i)^/css/transforms/transform$ /css/properties/transform break;
+rewrite (?i)^/css/tutorials/css-regions$ /tutorials/css-regions break;
+rewrite (?i)^/css/units/color$ /css/data_types/color break;
+rewrite (?i)^/css/units/text$ /css/data_types/text break;
+rewrite (?i)^/data$ /html/elements/data break;
+rewrite (?i)^/dom/events/DOMContentLoaded$ /dom/Event/DOMContentLoaded break;
+rewrite (?i)^/dom/events/load$ /dom/Element/load break;
+rewrite (?i)^/dom/images$ /dom/Image break;
+rewrite (?i)^/dom/object/PointerEvent/pointercancel$ /dom/objects/PointerEvent/pointercancel break;
+rewrite (?i)^/html/elements/applets$ /html/elements/applet break;
+rewrite (?i)^/html/elements/comment$ /html/elements/html_comment_data-type break;
+rewrite (?i)^/html/elements/dl-test$ /html/elements/dl break;
+rewrite (?i)^/http$ /concepts/protocols/http break;
+rewrite (?i)^/ImageCapture$ /apis/image_capture/ImageCapture break;
+rewrite (?i)^/js/objects/parseFloat$ /javascript/functions/parseFloat break;
+rewrite (?i)^/js/objects/parseInt$ /javascript/functions/parseInt break;
+rewrite (?i)^/keygen$ /html/elements/keygen break;
+rewrite (?i)^/mask-composite$ /css/properties/mask-composite break;
+rewrite (?i)^/rb$ /html/elements/rb break;
+rewrite (?i)^/rp$ /html/elements/rp break;
+rewrite (?i)^/rtc$ /html/elements/rtc break;
+rewrite (?i)^/svg/elements/feColorMix$ /svg/elements/feColorMatrix break;
+rewrite (?i)^/svg/elements/feFuncGelement$ /svg/elements/feFuncG break;
+rewrite (?i)^/svg/elements/patterrn$ /svg/elements/pattern break;
+rewrite (?i)^/tutorial/JavaScript-Statements$ /tutorials/javascript_statements break;
+rewrite (?i)^/tutorials/google-chrome-frame$ /tutorials/google_chrome_frame break;
+rewrite (?i)^/tutorials/JavaScript-About$ /tutorials/javascript_about break;
+rewrite (?i)^/tutorials/Mobile$ /tutorials/mobile_optimization_best_practices break;
+
+
+
+
+
+
+
+
+
+# 2_nginx_almost_same_casing
+rewrite (?i)^/apis/indexedDB$ /apis/indexeddb break;
+rewrite (?i)^/beginners$ /Beginners break;
+rewrite (?i)^/beginners/advanced$ /Beginners/advanced break;
+rewrite (?i)^/beginners/css$ /Beginners/css break;
+rewrite (?i)^/beginners/es$ /Beginners/es break;
+rewrite (?i)^/beginners/glossary$ /Beginners/glossary break;
+rewrite (?i)^/beginners/html$ /Beginners/html break;
+rewrite (?i)^/beginners/ja$ /Beginners/ja break;
+rewrite (?i)^/beginners/javascript$ /Beginners/javascript break;
+rewrite (?i)^/beginners/ko$ /Beginners/ko break;
+rewrite (?i)^/beginners/planning$ /Beginners/planning break;
+rewrite (?i)^/beginners/programming$ /Beginners/programming break;
+rewrite (?i)^/beginners/pt-br$ /Beginners/pt-br break;
+rewrite (?i)^/beginners/tr$ /Beginners/tr break;
+rewrite (?i)^/beginners/zh$ /Beginners/zh break;
+rewrite (?i)^/concepts/accessibility/POUR$ /concepts/accessibility/pour break;
+rewrite (?i)^/concepts/internet(\ |_)and(\ |_)web/About(\ |_)proxy(\ |_)based(\ |_)browsers$ /concepts/Internet_and_Web/About_proxy_based_browsers break;
+rewrite (?i)^/concepts/programming/javascript/LiveConnect$ /concepts/programming/javascript/liveconnect break;
+rewrite (?i)^/css/Mediaqueries$ /css/mediaqueries break;
+rewrite (?i)^/css/Namespaces$ /css/namespaces break;
+rewrite (?i)^/css/Properties/color$ /css/properties/color break;
+rewrite (?i)^/css/Properties/opacity$ /css/properties/opacity break;
+rewrite (?i)^/css/selectors/Type$ /css/selectors/type break;
+rewrite (?i)^/html/attributes/dateTime$ /html/attributes/datetime break;
+rewrite (?i)^/html/attributes/longDesc$ /html/attributes/longdesc break;
+rewrite (?i)^/html/attributes/readOnly$ /html/attributes/readonly break;
+rewrite (?i)^/tutorials/Closures$ /tutorials/closures break;
+rewrite (?i)^/tutorials/Forms$ /tutorials/forms break;
+rewrite (?i)^/tutorials/Location$ /tutorials/location break;
+rewrite (?i)^/tutorials/Offline$ /tutorials/offline break;
+
+
+
+
+
+
+
+
+
+# 3_nginx_almost_same 1
+
+
+
+
+
+
+
+
+# 3_nginx_almost_same 2
+
+
+
+
+
+
+
+
+# 4_nginx_redirects_spaces
+rewrite (?i)^/apis/xhr/methods/open(\ |_)\(XDomainRequest\)$ /apis/xhr/methods/open_XDomainRequest break;
+rewrite (?i)^/apis/xhr/methods/send(\ |_)\(XDomainRequest\)$ /apis/xhr/methods/send_XDomainRequest break;
+rewrite (?i)^/canvas/properties/height(\ |_)\(canvas\)$ /canvas/properties/height_canvas break;
+rewrite (?i)^/html/attributes/align(\ |_)\(Table,(\ |_)iframe(\ |_)elements\)$ /html/attributes/align_Table_iframe_elements break;
+rewrite (?i)^/html/attributes/align(\ |_)\(Table(\ |_)caption,(\ |_)legend(\ |_)element\)$ /html/attributes/align_Table_caption_legend_element break;
+rewrite (?i)^/html/attributes/autocomplete(\ |_)\(input,(\ |_)form(\ |_)elements\)$ /html/attributes/autocomplete_input_form_elements break;
+rewrite (?i)^/html/attributes/background(\ |_)\(Body(\ |_)element\)$ /html/attributes/background_Body_element break;
+rewrite (?i)^/html/attributes/background(\ |_)\(Table,(\ |_)table(\ |_)cell,(\ |_)td,(\ |_)th(\ |_)elements\)$ /html/attributes/background_Table_table_cell_td_th_elements break;
+rewrite (?i)^/html/attributes/border(\ |_)\(frameSet,(\ |_)iframe\)$ /html/attributes/border_frameSet_iframe break;
+rewrite (?i)^/html/attributes/cols(\ |_)\(frameSet\)$ /html/attributes/cols_frameSet break;
+rewrite (?i)^/html/attributes/cols(\ |_)\(TextArea(\ |_)element\)$ /html/attributes/cols_TextArea_element break;
+rewrite (?i)^/html/attributes/href(\ |_)\(base\)$ /html/attributes/href_base break;
+rewrite (?i)^/html/attributes/label(\ |_)\(optGroup\)$ /html/attributes/label_optGroup break;
+rewrite (?i)^/html/attributes/max(\ |_)\(HTMLInputElement\)$ /html/attributes/max_HTMLInputElement break;
+rewrite (?i)^/html/attributes/name(\ |_)\(frames\)$ /html/attributes/name_frames break;
+rewrite (?i)^/html/attributes/name(\ |_)\(meta(\ |_)object\)$ /html/attributes/name_meta_object break;
+rewrite (?i)^/html/attributes/name(\ |_)\(window\)$ /html/attributes/name_window break;
+rewrite (?i)^/html/attributes/name(\ |_)param(\ |_)element\)$ /html/attributes/name_param_element break;
+rewrite (?i)^/html/attributes/size(\ |_)\(control\)$ /html/attributes/size_control break;
+rewrite (?i)^/html/attributes/size(\ |_)\(hr\)$ /html/attributes/size_hr break;
+rewrite (?i)^/html/attributes/src(\ |_)\(iframe,(\ |_)embed,(\ |_)xml\)$ /html/attributes/src_iframe_embed_xml break;
+rewrite (?i)^/html/attributes/src(\ |_)\(input,(\ |_)img\)$ /html/attributes/src_input_img break;
+rewrite (?i)^/html/attributes/src(\ |_)\(script\)$ /html/attributes/src_script break;
+rewrite (?i)^/html/attributes/start(\ |_)\(ol\)$ /html/attributes/start_ol break;
+rewrite (?i)^/html/attributes/type(\ |_)\(button(\ |_)element\)$ /html/attributes/type_button_element break;
+rewrite (?i)^/html/attributes/type(\ |_)\(param(\ |_)element\)$ /html/attributes/type_param_element break;
+rewrite (?i)^/html/attributes/type(\ |_)\(script(\ |_)element\)$ /html/attributes/type_script_element break;
+rewrite (?i)^/html/attributes/type(\ |_)\(select(\ |_)element\)$ /html/attributes/type_select_element break;
+rewrite (?i)^/html/attributes/type(\ |_)\(textarea(\ |_)element\)$ /html/attributes/type_textarea_element break;
+rewrite (?i)^/html/attributes/type(\ |_)\(ul,li,ol(\ |_)elements\)$ /html/attributes/type_ulliol_elements break;
+rewrite (?i)^/html/attributes/vAlign(\ |_)\(table(\ |_)caption\)$ /html/attributes/vAlign_table_caption break;
+rewrite (?i)^/html/attributes/value(\ |_)\(button(\ |_)element\)$ /html/attributes/value_button_element break;
+rewrite (?i)^/html/attributes/value(\ |_)\(HTMLProgressElement\)$ /html/attributes/value_HTMLProgressElement break;
+rewrite (?i)^/html/attributes/value(\ |_)\(input(\ |_)elements\)$ /html/attributes/value_input_elements break;
+rewrite (?i)^/html/attributes/value(\ |_)\(li(\ |_)element\)$ /html/attributes/value_li_element break;
+rewrite (?i)^/html/attributes/value(\ |_)\(param(\ |_)element\)$ /html/attributes/value_param_element break;
+rewrite (?i)^/html/attributes/value(\ |_)\(select,(\ |_)option(\ |_)element\)$ /html/attributes/value_select_option_element break;
+rewrite (?i)^/html/attributes/value(\ |_)\(textarea(\ |_)element\)$ /html/attributes/value_textarea_element break;
+rewrite (?i)^/html/attributes/version(\ |_)\(dom/version$ /html/attributes/version_dom/version break;
+rewrite (?i)^/html/attributes/width(\ |_)\(img,(\ |_)input(\ |_)elements\)$ /html/attributes/width_img_input_elements break;
+rewrite (?i)^/html/attributes/width(\ |_)\(merge(\ |_)candidate\)$ /html/attributes/width_merge_candidate break;
+rewrite (?i)^/Notes\:The(\ |_)future(\ |_)of(\ |_)the(\ |_)open(\ |_)web$ /NotesThe_future_of_the_open_web break;
+rewrite (?i)^/svg/elements(\ |_)\(alphabetical(\ |_)order\)$ /svg/elements_alphabetical_order break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedAngle\)$ /svg/properties/animVal_SVGAnimatedAngle break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedBoolean\)$ /svg/properties/animVal_SVGAnimatedBoolean break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedEnumeration\)$ /svg/properties/animVal_SVGAnimatedEnumeration break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedInteger\)$ /svg/properties/animVal_SVGAnimatedInteger break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedLength\)$ /svg/properties/animVal_SVGAnimatedLength break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedLengthList\)$ /svg/properties/animVal_SVGAnimatedLengthList break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedNumber\)$ /svg/properties/animVal_SVGAnimatedNumber break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedNumberList\)$ /svg/properties/animVal_SVGAnimatedNumberList break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedPreserveAspectRatio\)$ /svg/properties/animVal_SVGAnimatedPreserveAspectRatio break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedRect\)$ /svg/properties/animVal_SVGAnimatedRect break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedString\)$ /svg/properties/animVal_SVGAnimatedString break;
+rewrite (?i)^/svg/properties/animVal(\ |_)\(SVGAnimatedTransformList\)$ /svg/properties/animVal_SVGAnimatedTransformList break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedAngle\)$ /svg/properties/baseVal_SVGAnimatedAngle break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedBoolean\)$ /svg/properties/baseVal_SVGAnimatedBoolean break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedEnumeration\)$ /svg/properties/baseVal_SVGAnimatedEnumeration break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedInteger\)$ /svg/properties/baseVal_SVGAnimatedInteger break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedLength\)$ /svg/properties/baseVal_SVGAnimatedLength break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedLengthList\)$ /svg/properties/baseVal_SVGAnimatedLengthList break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedNumber\)$ /svg/properties/baseVal_SVGAnimatedNumber break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedNumberList\)$ /svg/properties/baseVal_SVGAnimatedNumberList break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedPreserveAspectRatio\)$ /svg/properties/baseVal_SVGAnimatedPreserveAspectRatio break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedRect\)$ /svg/properties/baseVal_SVGAnimatedRect break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedString\)$ /svg/properties/baseVal_SVGAnimatedString break;
+rewrite (?i)^/svg/properties/baseVal(\ |_)\(SVGAnimatedTransformList\)$ /svg/properties/baseVal_SVGAnimatedTransformList break;
+rewrite (?i)^/svg/properties/cx(\ |_)\(SVGRadialGradientElement\)$ /svg/properties/cx_SVGRadialGradientElement break;
+rewrite (?i)^/svg/properties/cy(\ |_)\(SVGRadialGradientElement\)$ /svg/properties/cy_SVGRadialGradientElement break;
+rewrite (?i)^/svg/properties/r(\ |_)\(SVGRadialGradientElement\)$ /svg/properties/r_SVGRadialGradientElement break;
+rewrite (?i)^/svg/properties/rx(\ |_)\(SVGEllipseElement\)$ /svg/properties/rx_SVGEllipseElement break;
+rewrite (?i)^/svg/properties/rx(\ |_)\(SVGRectElement\)$ /svg/properties/rx_SVGRectElement break;
+rewrite (?i)^/svg/properties/ry(\ |_)\(SVGEllipseElement\)$ /svg/properties/ry_SVGEllipseElement break;
+rewrite (?i)^/svg/properties/ry(\ |_)\(SVGRectElement\)$ /svg/properties/ry_SVGRectElement break;
+rewrite (?i)^/svg/properties/type(\ |_)\(SVGComponentTransferFunctionElement\)$ /svg/properties/type_SVGComponentTransferFunctionElement break;
+rewrite (?i)^/svg/properties/type(\ |_)\(SVGFEColorMatrixElement\)$ /svg/properties/type_SVGFEColorMatrixElement break;
+rewrite (?i)^/svg/properties/type(\ |_)\(SVGFETurbulenceElement\)$ /svg/properties/type_SVGFETurbulenceElement break;
+rewrite (?i)^/svg/properties/type(\ |_)\(SVGScriptElement\)$ /svg/properties/type_SVGScriptElement break;
+rewrite (?i)^/svg/properties/type(\ |_)\(SVGStyleElement\)$ /svg/properties/type_SVGStyleElement break;
+rewrite (?i)^/svg/properties/type(\ |_)\(SVGTransform\)$ /svg/properties/type_SVGTransform break;
+rewrite (?i)^/svg/properties/unitType(\ |_)\(SVGLength\)$ /svg/properties/unitType_SVGLength break;
+rewrite (?i)^/svg/properties/x1(\ |_)\(SVGLinearGradientElement\)$ /svg/properties/x1_SVGLinearGradientElement break;
+rewrite (?i)^/svg/properties/x1(\ |_)\(SVGLineElement\)$ /svg/properties/x1_SVGLineElement break;
+rewrite (?i)^/svg/properties/x2(\ |_)\(SVGLinearGradientElement\)$ /svg/properties/x2_SVGLinearGradientElement break;
+rewrite (?i)^/svg/properties/x2(\ |_)\(SVGLineElement\)$ /svg/properties/x2_SVGLineElement break;
+rewrite (?i)^/svg/properties/y1(\ |_)\(SVGLinearGradientElement\)$ /svg/properties/y1_SVGLinearGradientElement break;
+rewrite (?i)^/svg/properties/y1(\ |_)\(SVGLineElement\)$ /svg/properties/y1_SVGLineElement break;
+rewrite (?i)^/svg/properties/y2(\ |_)\(SVGLinearGradientElement\)$ /svg/properties/y2_SVGLinearGradientElement break;
+rewrite (?i)^/svg/properties/y2(\ |_)\(SVGLineElement\)$ /svg/properties/y2_SVGLineElement break;
+rewrite (?i)^/tutorials/Raw(\ |_)WebGL(\ |_)101(\ |_)—(\ |_)Part(\ |_)4\:(\ |_)Textures$ /tutorials/Raw_WebGL_101_-_Part_4_Textures break;
+rewrite (?i)^/canvas/tutorial/Canvas(\ |_)tutorial$ /tutorials/canvas/Canvas_tutorial break;
+rewrite (?i)^/canvas/tutorial/Canvas(\ |_)tutorial/Applying(\ |_)styles(\ |_)and(\ |_)colors$ /tutorials/canvas/Canvas_tutorial/Applying_styles_and_colors break;
+rewrite (?i)^/canvas/tutorial/Canvas(\ |_)tutorial/Basic(\ |_)animations$ /tutorials/canvas/Canvas_tutorial/Basic_animations break;
+rewrite (?i)^/canvas/tutorial/Canvas(\ |_)tutorial/Basic(\ |_)usage$ /tutorials/canvas/Canvas_tutorial/Basic_usage break;
+rewrite (?i)^/canvas/tutorial/Canvas(\ |_)tutorial/Compositing$ /tutorials/canvas/Canvas_tutorial/Compositing break;
+rewrite (?i)^/canvas/tutorial/Canvas(\ |_)tutorial/Drawing(\ |_)shapes$ /tutorials/canvas/Canvas_tutorial/Drawing_shapes break;
+rewrite (?i)^/canvas/tutorial/Canvas(\ |_)tutorial/Transformations$ /tutorials/canvas/Canvas_tutorial/Transformations break;
+rewrite (?i)^/canvas/tutorial/Canvas(\ |_)tutorial/Using(\ |_)images$ /tutorials/canvas/Canvas_tutorial/Using_images break;
+rewrite (?i)^/ConceptMarking(\ |_)up(\ |_)textual(\ |_)content(\ |_)in(\ |_)HTML$ /Marking_up_textual_content_in_HTML break;
+rewrite (?i)^/concepts/About(\ |_)mobile(\ |_)web$ /concepts/mobile_web/mobile_web break;
+rewrite (?i)^/concepts/an(\ |_)introduction(\ |_)to(\ |_)digital(\ |_)design$ /concepts/an_introduction_to_web_design break;
+rewrite (?i)^/concepts/at(\ |_)tools$ /concepts/accessibility/at_tools break;
+rewrite (?i)^/concepts/bringing(\ |_)accessibility(\ |_)into(\ |_)your(\ |_)organization$ /concepts/accessibility/bringing_accessibility_into_your_organization break;
+rewrite (?i)^/concepts/color(\ |_)schemes(\ |_)and(\ |_)mockups$ /concepts/color_theory/color_schemes_and_mockups break;
+rewrite (?i)^/concepts/IA/planning(\ |_)a(\ |_)website$ /concepts/information_architecture/planning_a_website break;
+rewrite (?i)^/concepts/Internet(\ |_)and(\ |_)Web/About(\ |_)HTML5(\ |_)hybrid(\ |_)applications$ /concepts/Internet_and_Web/html5_hybrid_applications break;
+rewrite (?i)^/concepts/internet(\ |_)web/mime(\ |_)types$ /concepts/Internet_and_Web/mime_types break;
+rewrite (?i)^/concepts/mobile(\ |_)web/About(\ |_)mobile(\ |_)friendly(\ |_)web(\ |_)design(\ |_)and(\ |_)development(\ |_)overview$ /concepts/mobile_web/mobile_friendly_web_dev_overview break;
+rewrite (?i)^/concepts/mobile(\ |_)web/About(\ |_)mobile(\ |_)JavaScript(\ |_)best(\ |_)practices$ /concepts/mobile_web/mobile_javascript_best_practices break;
+rewrite (?i)^/concepts/mobile(\ |_)web/About(\ |_)mobile(\ |_)web$ /concepts/mobile_web/mobile_web break;
+rewrite (?i)^/concepts/Pointer(\ |_)Events(\ |_)sandbox$ /PointerEvents break;
+rewrite (?i)^/concepts/Pointer(\ |_)Events(\ |_)sandbox/documentation$ /PointerEvents/documentation break;
+rewrite (?i)^/concepts/Pointer(\ |_)Events(\ |_)sandbox/experimental$ /PointerEvents/experimental break;
+rewrite (?i)^/concepts/Pointer(\ |_)Events(\ |_)sandbox/learn$ /PointerEvents/learn break;
+rewrite (?i)^/concepts/Pointer(\ |_)Events(\ |_)sandbox/prototypes$ /PointerEvents/prototypes break;
+rewrite (?i)^/concepts/Pointer(\ |_)Events(\ |_)sandbox/specifications$ /PointerEvents/specifications break;
+rewrite (?i)^/concepts/Pointer(\ |_)Events(\ |_)sandbox/test$ /PointerEvents/test break;
+rewrite (?i)^/concepts/Pointer(\ |_)Events(\ |_)sandbox/try$ /PointerEvents/try break;
+rewrite (?i)^/concepts/programming/programming(\ |_)basics/ja$ /concepts/programming/programming_basics/langja break;
+rewrite (?i)^/concepts/programming/programming(\ |_)basics/langja$ /ja/concepts/programming/programming_basics break;
+rewrite (?i)^/concepts/user(\ |_)experience(\ |_)design$ /concepts/ux/user_experience_design break;
+rewrite (?i)^/concepts/ux/user(\ |_)experience(\ |_)design(\ |_)techniques$ /concepts/ux/techniques/stakeholder_mapping break;
+rewrite (?i)^/concepts/what(\ |_)does(\ |_)a(\ |_)good(\ |_)web(\ |_)page(\ |_)need$ /concepts/ux/What_does_a_good_web_page_need break;
+rewrite (?i)^/css/color/color(\ |_)table$ /css/color/ break;
+rewrite (?i)^/css/data(\ |_)types/uri$ /css/data_types/url break;
+rewrite (?i)^/css/media(\ |_)queries/behavior$ /css/properties/behavior break;
+rewrite (?i)^/css/selectors/pseudo-classes/Dynamic(\ |_)pseudo-classes$ /css/selectors/pseudo-classes break;
+rewrite (?i)^/guides/css(\ |_)shorthand(\ |_)reference$ /guides/css_shorthand break;
+rewrite (?i)^/guides/html5(\ |_)form(\ |_)features$ /tutorials/html5_form_features break;
+rewrite (?i)^/html/attributes/BGCOLOR(\ |_)html(\ |_)attribute$ /html/attributes/BGCOLOR break;
+rewrite (?i)^/html/attributes/STYLE(\ |_)html(\ |_)attribute$ /html/attributes/style break;
+rewrite (?i)^/html/attributes/type(\ |_)type(\ |_)a(\ |_)link(\ |_)embed$ /html/attributes/type break;
+rewrite (?i)^/html(\ |_)text/es$ /guides/html_text/es break;
+rewrite (?i)^/javascript/regular(\ |_)expression/compile$ /javascript/RegExp/compile break;
+rewrite (?i)^/javascript/regular(\ |_)expression/exec$ /javascript/RegExp/exec break;
+rewrite (?i)^/javascript/regular(\ |_)expression/global$ /javascript/RegExp/global break;
+rewrite (?i)^/javascript/regular(\ |_)expression/ignoreCase$ /javascript/RegExp/ignoreCase break;
+rewrite (?i)^/javascript/regular(\ |_)expression/multiline$ /javascript/RegExp/multiline break;
+rewrite (?i)^/javascript/regular(\ |_)expression/source$ /javascript/RegExp/source break;
+rewrite (?i)^/javascript/regular(\ |_)expression/sticky$ /javascript/RegExp/sticky break;
+rewrite (?i)^/javascript/regular(\ |_)expression/test$ /javascript/RegExp/test break;
+rewrite (?i)^/javascript/regular(\ |_)expression/unicode$ /javascript/RegExp/unicode break;
+rewrite (?i)^/JavaScript(\ |_)animation$ /tutorials/animation_in_javascript_2 break;
+rewrite (?i)^/Proposalstest/css(\ |_)properties(\ |_)display$ /WPD/Proposals/CSS_Property_Milestone/css_prop_enhancements/test/css_properties_display break;
+rewrite (?i)^/Styling(\ |_)lists(\ |_)and(\ |_)links$ /guides/Styling_lists_and_links break;
+rewrite (?i)^/svg/tutorials/smarter(\ |_)svg(\ |_)basics$ /svg/tutorials/smarter_svg_shapes break;
+rewrite (?i)^/svg/tutorials/smarter(\ |_)svg(\ |_)filter$ /svg/tutorials/smarter_svg_filters break;
+rewrite (?i)^/svg/tutorials/smarter(\ |_)svg(\ |_)interaction$ /Meta/svg/tutorials/smarter_svg_interaction break;
+rewrite (?i)^/svg/tutorials/smarter(\ |_)svg(\ |_)scope$ /svg/tutorials/smarter_svg_overview break;
+rewrite (?i)^/svg/tutorials/smarter(\ |_)svg(\ |_)script$ /svg/tutorials/smarter_svg_interaction break;
+rewrite (?i)^/sxsw(\ |_)talk(\ |_)proposal$ /WPD/sxsw_talk_proposal break;
+rewrite (?i)^/tutorial/html(\ |_)links$ /guides/html_lists break;
+rewrite (?i)^/tutorials/advanced(\ |_)selectors$ /guides/advanced_selectors_guide break;
+rewrite (?i)^/tutorials/anim(\ |_)animations$ /Meta/anim_animations break;
+rewrite (?i)^/tutorials/anim(\ |_)transforms$ /Meta/anim_transforms break;
+rewrite (?i)^/tutorials/Background(\ |_)images$ /tutorials/using_css_background_images break;
+rewrite (?i)^/tutorials/basic(\ |_)shapes$ /tutorials/basic_svg_shapes break;
+rewrite (?i)^/tutorials/Color(\ |_)in(\ |_)CSS$ /tutorials/setting_color_in_css break;
+rewrite (?i)^/tutorials/creating(\ |_)prototypes$ /concepts/creating_prototypes break;
+rewrite (?i)^/tutorials/CSS3(\ |_)animations$ /tutorials/css_animations break;
+rewrite (?i)^/tutorials/CSS3(\ |_)transforms$ /tutorials/css_transforms break;
+rewrite (?i)^/tutorials/CSS3(\ |_)transitions$ /tutorials/css_transitions break;
+rewrite (?i)^/tutorials/CSS(\ |_)border-image$ /tutorials/css_border_image break;
+rewrite (?i)^/tutorials/CSS(\ |_)box-shadow$ /tutorials/css_box_shadow break;
+rewrite (?i)^/tutorials/CSS(\ |_)gradients$ /tutorials/creating_gradients_in_css break;
+rewrite (?i)^/tutorials/CSS(\ |_)text(\ |_)styling(\ |_)advanced$ /guides/advanced_css_text_styling break;
+rewrite (?i)^/tutorials/css(\ |_)text(\ |_)styling(\ |_)fundamentals$ /guides/css_text_styling_fundamentals break;
+rewrite (?i)^/tutorials/custom(\ |_)filters$ /Meta/tutorials/custom_filters break;
+rewrite (?i)^/tutorials/doctypes(\ |_)and(\ |_)markup(\ |_)styles$ /guides/doctypes_and_markup_styles break;
+rewrite (?i)^/tutorials/getting(\ |_)started(\ |_)with(\ |_)css$ /guides/getting_started_with_css break;
+rewrite (?i)^/tutorials/how(\ |_)browsers(\ |_)work$ /concepts/Internet_and_Web/how_browsers_work break;
+rewrite (?i)^/tutorials/html(\ |_)forms(\ |_)basics$ /guides/html_forms_basics break;
+rewrite (?i)^/tutorials/html(\ |_)links$ /guides/html_links break;
+rewrite (?i)^/tutorials/html(\ |_)lists$ /guides/html_lists break;
+rewrite (?i)^/tutorials/html(\ |_)structural(\ |_)elements$ /guides/html_structural_elements break;
+rewrite (?i)^/tutorials/html(\ |_)tables$ /guides/html_tables break;
+rewrite (?i)^/tutorials/html(\ |_)text$ /guides/html_text break;
+rewrite (?i)^/tutorials/html(\ |_)validation$ /guides/html_validation break;
+rewrite (?i)^/tutorials/images(\ |_)in(\ |_)html$ /guides/images_in_html break;
+rewrite (?i)^/tutorials/Information(\ |_)Architecture(\ |_)-(\ |_)planning(\ |_)out(\ |_)a(\ |_)web(\ |_)site$ /tutorials/information_architecture/Planning_out_a_website break;
+rewrite (?i)^/tutorials/intro(\ |_)web(\ |_)audio(\ |_)api(\ |_)1$ /tutorials/audio/intro_web_audio_api_1 break;
+rewrite (?i)^/tutorials/intro(\ |_)web(\ |_)audio(\ |_)api(\ |_)2$ /tutorials/audio/intro_web_audio_api_2 break;
+rewrite (?i)^/tutorials/lesser-known(\ |_)semantic(\ |_)elements$ /guides/lesser-known_semantic_elements break;
+rewrite (?i)^/tutorials/List(\ |_)basics$ /tutorials/using_specific_list_styles break;
+rewrite (?i)^/tutorials/Manipulating(\ |_)replaced(\ |_)element(\ |_)content(\ |_)with(\ |_)object-fit$ /tutorials/object_fit break;
+rewrite (?i)^/tutorials/more(\ |_)about(\ |_)the(\ |_)html(\ |_)head$ /guides/more_about_the_html_head break;
+rewrite (?i)^/tutorials/Programming(\ |_)-(\ |_)the(\ |_)real(\ |_)basics$ /concepts/programming/programming_basics break;
+rewrite (?i)^/tutorials/selectors(\ |_)fundamentals$ /tutorials/using_selectors break;
+rewrite (?i)^/tutorials/Styling(\ |_)forms$ /guides/styling_forms_guide break;
+rewrite (?i)^/tutorials/Styling(\ |_)tables$ /guides/styling_tables break;
+rewrite (?i)^/tutorials/Styling(\ |_)XML(\ |_)data(\ |_)with(\ |_)CSS$ /tutorials/styling_xml_with_css break;
+rewrite (?i)^/tutorials/Targetting(\ |_)CSS(\ |_)at(\ |_)different(\ |_)media(\ |_)types$ /tutorials/targetting_css_at_different_media break;
+rewrite (?i)^/tutorials/the(\ |_)html(\ |_)head$ /guides/the_html_head break;
+rewrite (?i)^/tutorials/using(\ |_)web(\ |_)audio(\ |_)api(\ |_)pt1$ /tutorials/intro_web_audio_api_1 break;
+rewrite (?i)^/tutorials/why(\ |_)use(\ |_)css$ /tutorials/learning_why_we_use_css break;

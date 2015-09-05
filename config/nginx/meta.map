@@ -1,0 +1,203 @@
+#
+# This File attempts to fix original MediaWiki links to redirect to static file
+#
+# This map was originally generated against namespace 0 and 108 from app1.production.wpdn on 2015-07-25
+#
+#    # From the MediaWiki installation;
+#    php maintenance/dumpBackup.php --current --filter=namespace:3020 > /home/renoirb/meta.xml
+#
+#    # From a MediaWiki Converter clone
+#    app/console mediawiki:summary --source-xml=dumps/meta.xml --namespace-prefix=Meta
+#
+# See comments in docs.main.map for more details
+#
+# @author Renoir Boulanger <renoir@w3.org>
+#
+
+
+
+
+
+
+
+
+
+# Redirect loops
+rewrite (?i)^/Meta/web(\ |_)platform(\ |_)wednesday$ /Meta/web_platform_wednesday break;
+
+
+
+
+
+
+
+
+
+# 1_nginx
+rewrite (?i)^/Meta/api$ /WPD/API break;
+rewrite (?i)^/Meta/apis/css-regions/CSSRegionStyleRule$ /apis/css-regions/CSSRegionStyleRule break;
+rewrite (?i)^/Meta/css/atrules/region$ /css/atrules/region break;
+rewrite (?i)^/Meta/Deployment$ /WPD/Infrastructure/Deployment break;
+rewrite (?i)^/Meta/HTML/Elements/a$ /html/elements/a break;
+rewrite (?i)^/Meta/HTML/Elements/abbr$ /html/elements/abbr break;
+rewrite (?i)^/Meta/HTML/Elements/acronym$ /html/elements/acronym break;
+rewrite (?i)^/Meta/HTML/Elements/address$ /html/elements/address break;
+rewrite (?i)^/Meta/HTML/Elements/applet$ /html/elements/applet break;
+rewrite (?i)^/Meta/HTML/Elements/area$ /html/elements/area break;
+rewrite (?i)^/Meta/HTML/Elements/article$ /html/elements/article break;
+rewrite (?i)^/Meta/HTML/Elements/aside$ /html/elements/aside break;
+rewrite (?i)^/Meta/HTML/Elements/b$ /html/elements/b break;
+rewrite (?i)^/Meta/HTML/Elements/base$ /html/elements/base break;
+rewrite (?i)^/Meta/HTML/Elements/basefont$ /html/elements/basefont break;
+rewrite (?i)^/Meta/HTML/Elements/bdo$ /html/elements/bdo break;
+rewrite (?i)^/Meta/HTML/Elements/bgsound$ /html/elements/bgsound break;
+rewrite (?i)^/Meta/HTML/Elements/big$ /html/elements/big break;
+rewrite (?i)^/Meta/HTML/Elements/blink$ /html/elements/blink break;
+rewrite (?i)^/Meta/HTML/Elements/blockquote$ /html/elements/blockquote break;
+rewrite (?i)^/Meta/HTML/Elements/body$ /html/elements/body break;
+rewrite (?i)^/Meta/HTML/Elements/br$ /html/elements/br break;
+rewrite (?i)^/Meta/HTML/Elements/button$ /html/elements/button break;
+rewrite (?i)^/Meta/HTML/Elements/canvas$ /html/elements/canvas break;
+rewrite (?i)^/Meta/HTML/Elements/caption$ /html/elements/caption break;
+rewrite (?i)^/Meta/HTML/Elements/center$ /html/elements/center break;
+rewrite (?i)^/Meta/HTML/Elements/cite$ /html/elements/cite break;
+rewrite (?i)^/Meta/HTML/Elements/code$ /html/elements/code break;
+rewrite (?i)^/Meta/HTML/Elements/col$ /html/elements/col break;
+rewrite (?i)^/Meta/HTML/Elements/colgroup$ /html/elements/colgroup break;
+rewrite (?i)^/Meta/HTML/Elements/datalist$ /html/elements/datalist break;
+rewrite (?i)^/Meta/HTML/Elements/dd$ /html/elements/dd break;
+rewrite (?i)^/Meta/HTML/Elements/del$ /html/elements/del break;
+rewrite (?i)^/Meta/HTML/Elements/details$ /html/elements/details break;
+rewrite (?i)^/Meta/HTML/Elements/dfn$ /html/elements/dfn break;
+rewrite (?i)^/Meta/HTML/Elements/div$ /html/elements/div break;
+rewrite (?i)^/Meta/HTML/Elements/dl$ /html/elements/dl break;
+rewrite (?i)^/Meta/HTML/Elements/dt$ /html/elements/dt break;
+rewrite (?i)^/Meta/HTML/Elements/em$ /html/elements/em break;
+rewrite (?i)^/Meta/HTML/Elements/embed$ /html/elements/embed break;
+rewrite (?i)^/Meta/HTML/Elements/fieldset$ /html/elements/fieldset break;
+rewrite (?i)^/Meta/HTML/Elements/figcaption$ /html/elements/figcaption break;
+rewrite (?i)^/Meta/HTML/Elements/figure$ /html/elements/figure break;
+rewrite (?i)^/Meta/HTML/Elements/font$ /html/elements/font break;
+rewrite (?i)^/Meta/HTML/Elements/footer$ /html/elements/footer break;
+rewrite (?i)^/Meta/HTML/Elements/form$ /html/elements/form break;
+rewrite (?i)^/Meta/HTML/Elements/frame$ /html/elements/frame break;
+rewrite (?i)^/Meta/HTML/Elements/frameset$ /html/elements/frameSet break;
+rewrite (?i)^/Meta/HTML/Elements/head$ /html/elements/head break;
+rewrite (?i)^/Meta/HTML/Elements/header$ /html/elements/header break;
+rewrite (?i)^/Meta/HTML/Elements/hgroup$ /html/elements/hgroup break;
+rewrite (?i)^/Meta/HTML/Elements/hr$ /html/elements/hr break;
+rewrite (?i)^/Meta/HTML/Elements/html$ /html/elements/html break;
+rewrite (?i)^/Meta/HTML/Elements/i$ /html/elements/i break;
+rewrite (?i)^/Meta/HTML/Elements/iframe$ /html/elements/iframe break;
+rewrite (?i)^/Meta/HTML/Elements/img$ /html/elements/img break;
+rewrite (?i)^/Meta/HTML/Elements/ins$ /html/elements/ins break;
+rewrite (?i)^/Meta/HTML/Elements/isindex$ /html/elements/isIndex break;
+rewrite (?i)^/Meta/HTML/Elements/kbd$ /html/elements/kbd break;
+rewrite (?i)^/Meta/HTML/Elements/keygen$ /html/elements/keygen break;
+rewrite (?i)^/Meta/HTML/Elements/label$ /html/elements/label break;
+rewrite (?i)^/Meta/HTML/Elements/legend$ /html/elements/legend break;
+rewrite (?i)^/Meta/HTML/Elements/li$ /html/elements/li break;
+rewrite (?i)^/Meta/HTML/Elements/link$ /html/elements/link break;
+rewrite (?i)^/Meta/HTML/Elements/listing$ /html/elements/listing break;
+rewrite (?i)^/Meta/HTML/Elements/map$ /html/elements/map break;
+rewrite (?i)^/Meta/HTML/Elements/mark$ /html/elements/mark break;
+rewrite (?i)^/Meta/HTML/Elements/marquee$ /html/elements/marquee break;
+rewrite (?i)^/Meta/HTML/Elements/math$ /mathml/elements/math break;
+rewrite (?i)^/Meta/HTML/Elements/meta$ /html/elements/meta break;
+rewrite (?i)^/Meta/HTML/Elements/nav$ /html/elements/nav break;
+rewrite (?i)^/Meta/HTML/Elements/nextid$ /html/elements/nextID break;
+rewrite (?i)^/Meta/HTML/Elements/nobr$ /html/elements/noBR break;
+rewrite (?i)^/Meta/HTML/Elements/noframes$ /html/elements/noFrames break;
+rewrite (?i)^/Meta/HTML/Elements/noscript$ /html/elements/noscript break;
+rewrite (?i)^/Meta/HTML/Elements/object$ /html/elements/object break;
+rewrite (?i)^/Meta/HTML/Elements/option$ /html/elements/option break;
+rewrite (?i)^/Meta/HTML/Elements/output$ /html/elements/output break;
+rewrite (?i)^/Meta/HTML/Elements/p$ /html/elements/p break;
+rewrite (?i)^/Meta/HTML/Elements/param$ /html/elements/param break;
+rewrite (?i)^/Meta/HTML/Elements/plaintext$ /html/elements/plainText break;
+rewrite (?i)^/Meta/HTML/Elements/pre$ /html/elements/pre break;
+rewrite (?i)^/Meta/HTML/Elements/progress$ /html/elements/progress break;
+rewrite (?i)^/Meta/HTML/Elements/q$ /html/elements/q break;
+rewrite (?i)^/Meta/HTML/Elements/rp$ /html/elements/rp break;
+rewrite (?i)^/Meta/HTML/Elements/rt$ /html/elements/rt break;
+rewrite (?i)^/Meta/HTML/Elements/ruby$ /html/elements/ruby break;
+rewrite (?i)^/Meta/HTML/Elements/s$ /html/elements/s break;
+rewrite (?i)^/Meta/HTML/Elements/samp$ /html/elements/samp break;
+rewrite (?i)^/Meta/HTML/Elements/script$ /html/elements/script break;
+rewrite (?i)^/Meta/HTML/Elements/section$ /html/elements/section break;
+rewrite (?i)^/Meta/HTML/Elements/select$ /html/elements/select break;
+rewrite (?i)^/Meta/HTML/Elements/small$ /html/elements/small break;
+rewrite (?i)^/Meta/HTML/Elements/source$ /html/elements/source break;
+rewrite (?i)^/Meta/HTML/Elements/span$ /html/elements/span break;
+rewrite (?i)^/Meta/HTML/Elements/strike$ /html/elements/strike break;
+rewrite (?i)^/Meta/HTML/Elements/strong$ /html/elements/strong break;
+rewrite (?i)^/Meta/HTML/Elements/sub$ /html/elements/sub break;
+rewrite (?i)^/Meta/HTML/Elements/sup$ /html/elements/sup break;
+rewrite (?i)^/Meta/HTML/Elements/svg$ /svg/elements/svg break;
+rewrite (?i)^/Meta/HTML/Elements/tbody$ /html/elements/tbody break;
+rewrite (?i)^/Meta/HTML/Elements/td$ /html/elements/td break;
+rewrite (?i)^/Meta/HTML/Elements/textarea$ /html/elements/textarea break;
+rewrite (?i)^/Meta/HTML/Elements/tfoot$ /html/elements/tfoot break;
+rewrite (?i)^/Meta/HTML/Elements/th$ /html/elements/th break;
+rewrite (?i)^/Meta/HTML/Elements/thead$ /html/elements/thead break;
+rewrite (?i)^/Meta/HTML/Elements/time$ /html/elements/time break;
+rewrite (?i)^/Meta/HTML/Elements/title$ /html/elements/title break;
+rewrite (?i)^/Meta/HTML/Elements/tr$ /html/elements/tr break;
+rewrite (?i)^/Meta/HTML/Elements/tt$ /html/elements/tt break;
+rewrite (?i)^/Meta/HTML/Elements/u$ /html/elements/u break;
+rewrite (?i)^/Meta/HTML/Elements/ul$ /html/elements/ul break;
+rewrite (?i)^/Meta/HTML/Elements/video$ /html/elements/video break;
+rewrite (?i)^/Meta/HTML/Elements/wbr$ /html/elements/wbr break;
+rewrite (?i)^/Meta/HTML/Elements/xmp$ /html/elements/xmp break;
+rewrite (?i)^/Meta/Infrastructure/Deployment$ /WPD/Infrastructure/Deployment break;
+rewrite (?i)^/Meta/javascript/functions$ /concepts/programming/javascript/functions break;
+rewrite (?i)^/Meta/javascript/libraries$ /concepts/programming/javascript/libraries break;
+rewrite (?i)^/Meta/Marketing$ /WPD/Marketing break;
+rewrite (?i)^/Meta/Marketing/Swag$ /WPD/Marketing/Swag break;
+rewrite (?i)^/Meta/Marketing/Videos$ /WPD/Marketing/Videos break;
+
+
+
+
+
+
+
+
+# 2_nginx_almost_same_casing
+
+
+
+
+
+
+
+
+# 3_nginx_almost_same 1
+
+
+
+
+
+
+
+
+# 3_nginx_almost_same 2
+
+
+
+
+
+
+
+
+
+# 4_nginx_redirects_spaces
+rewrite (?i)^/Meta/delete(\ |_)position$ /css/data_types/position break;
+rewrite (?i)^/Meta/HTML/Elements/h1(\ |_)h2(\ |_)h3(\ |_)h4(\ |_)h5(\ |_)and(\ |_)h6$ /html/elements/hn break;
+rewrite (?i)^/Meta/javascript/feature(\ |_)detection$ /concepts/programming/feature_detection break;
+rewrite (?i)^/Meta/svg/tutorials/smarter(\ |_)svg(\ |_)animation$ /svg/tutorials/smarter_svg_animation break;
+rewrite (?i)^/Meta/svg/tutorials/smarter(\ |_)svg(\ |_)filters$ /svg/tutorials/smarter_svg_filters break;
+rewrite (?i)^/Meta/svg/tutorials/smarter(\ |_)svg(\ |_)interaction$ /svg/tutorials/smarter_svg_interact break;
+rewrite (?i)^/Meta/svg/tutorials/smarter(\ |_)svg(\ |_)text$ /svg/tutorials/smarter_svg_text break;
+rewrite (?i)^/Meta/svg/tutorials/smarter(\ |_)svg(\ |_)text(\ |_)outline$ /svg/tutorials/smarter_svg_text break;
+rewrite (?i)^/Meta/tutorials/custom(\ |_)filters$ /tutorials/svg_filters break;
