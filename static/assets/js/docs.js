@@ -201,43 +201,6 @@ if (!String.prototype.format) {
                 this.className = this.className.replace(/\s+focus\b/, ' ');
             }, true);
         }
-        var langs = document.querySelectorAll('.example > p > .language');
-        for (var i = 0, lang; lang = langs[i++];) {
-            var pre = lang.parentNode.parentNode.querySelector('pre');
-            var code = document.createElement('code');
-            code.className = 'language-' + {
-                'JavaScript': 'javascript',
-                'HTML': 'markup',
-                'CSS': 'css'
-            }[lang.textContent];
-            code.innerHTML = pre.innerHTML;
-            pre.innerHTML = '';
-            pre.appendChild(code);
-        }
-        var pres = document.querySelectorAll('[class^="language-"]');
-        for (var i = 0, pre; pre = pres[i++];) {
-            if (pre.childElementCount === 0) {
-                var bogusClassName = pre.getAttribute('class'),
-                    fixedClassName = bogusClassName.replace('{.','').replace('}','');
-                var code = document.createElement('code');
-                pre.setAttribute('class', fixedClassName);
-                code.className = pre.className;
-                code.innerHTML = pre.innerHTML;
-                pre.innerHTML = '';
-                pre.appendChild(code);
-            }
-        }
-
-        (function addPrismCss () {
-            var tag = document.createElement('link');
-            tag.setAttribute('rel', 'stylesheet');
-            tag.setAttribute('href', '/assets/css/prism.css');
-            document.body.appendChild(tag);
-            if (!!window.Prism) {
-                window.Prism && Prism.highlightAll();
-            }
-            console.log('addPrismCss loaded');
-        }());
 
         mainEditButton();
         mainToc();

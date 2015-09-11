@@ -1,10 +1,10 @@
 var  metalsmith = require('metalsmith')
     ,changed = require('metalsmith-changed')
-    ,markdown = require('metalsmith-markdown-remarkable')
-    ,handlebars = require('handlebars')
     ,layouts = require('metalsmith-layouts')
     ,assets = require('metalsmith-assets')
-    ,syntaxHighlighter = require('./lib/metalsmith/highlighter')
+    ,remarkable = require('metalsmith-markdown-remarkable')
+    ,syntaxHighlighter = require('./lib/remarkable/highlighter')
+    ,remarkablePlugin = require('./lib/remarkable/extender')
     ,pkg = require('./package.json');
 
 metalsmith(__dirname)
@@ -12,13 +12,13 @@ metalsmith(__dirname)
   .use(changed())
   .source('./src')
   .destination('./build')
-  .use(markdown('full', {
+  .use(remarkable('full', {
     breaks: true,
     typographer: true,
     html: true,
     langPrefix: '',
     highlight: syntaxHighlighter
-  }))
+  }).use(remarkablePlugin))
   .use(layouts({
     engine: "handlebars",
     default: "default.hbs"
