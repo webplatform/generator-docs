@@ -25,11 +25,11 @@ node_modules: package.json
 
 
 rsync:
-		rsync -az --delete --progress --exclude=".cache" --exclude=".git" build/ staging.wpdn:/srv/code/docs/dist/
+		rsync -az --delete --progress --exclude=".git" build/ upstream-docs1.staging.wpdn:/srv/webapps/docs/build/
 
 
 nas:
-		rsync -az --delete --progress --exclude=".cache" --exclude=".git" build/ /Volumes/web/webplatform/
+		rsync -a --delete --progress --exclude=".git" build/ /Volumes/web/webplatform/
 
 
 serve:

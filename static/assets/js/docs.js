@@ -153,7 +153,7 @@ function mainEditButton(){
                 namespacePrefixOutcome = namespaceTests[namespaceTestsIdx][1];
             }
         }
-        sourceFile = sourceFile.format(namespacePrefixOutcome).replace(/master\/(Meta|WPD)\//, 'master');
+        sourceFile = sourceFile.format(namespacePrefixOutcome).replace(/master\/(Meta|WPD)\//, 'master/');
         editHref = sourceFile + ((/\/$/.test(pathName))?'index.md':'.md');
         editBtn.setAttribute('href', editHref);
     }
