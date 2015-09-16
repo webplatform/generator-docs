@@ -30,6 +30,17 @@
 
 
 
+# Replace MediaWiki specific. Not meta. Not main content.
+rewrite (?i)^/MediaWiki\:Site-terms-of-service /Contributor_Agreement permanent;
+
+
+
+
+
+
+
+
+
 # Redirect loops
 rewrite (?i)^/after$ /css/selectors/pseudo-elements/after permanent;
 rewrite (?i)^/tutorials/What(\ |_)is(\ |_)CSS(\?|)$ /tutorials/learning_what_css_is permanent;
@@ -82,6 +93,7 @@ rewrite (?i)^/concepts/ux$ /concepts/ux break;
 rewrite (?i)^/concepts/web_design$ /concepts/web_design break;
 rewrite (?i)^/concepts/web_typography$ /concepts/web_typography break;
 rewrite (?i)^/concepts/wireframing_a_site$ /concepts/wireframing_a_site break;
+
 
 
 
@@ -394,7 +406,9 @@ rewrite (?i)^/tutorials/Offline$ /tutorials/offline break;
 
 
 
+
 # 3_nginx_almost_same 2
+
 
 
 

@@ -138,7 +138,7 @@ function mainEditButton(){
 
     var title = document.querySelectorAll('h1 .mw-headline')[0] || {},
         editBtn = document.querySelectorAll('.toolbar a.edit')[0] || {},
-        baseSourceRepo = "https://github.com/webplatform/docs{0}/edit/master",
+        baseSourceRepo = "https://github.com/webplatform/docs{0}/blob/manual-edits",
         namespaceTests = [[/^\/Meta/, '-meta'], [/^\/WPD/, '-wpd']],
         urlObj = new URL(window.location.href),
         pathName = urlObj.pathname.replace('.html', ''),
@@ -153,7 +153,7 @@ function mainEditButton(){
                 namespacePrefixOutcome = namespaceTests[namespaceTestsIdx][1];
             }
         }
-        sourceFile = sourceFile.format(namespacePrefixOutcome).replace(/master\/(Meta|WPD)\//, 'master/');
+        sourceFile = sourceFile.format(namespacePrefixOutcome).replace(/manual-edits\/(Meta|WPD)\//, 'master/');
         editHref = sourceFile + ((/\/$/.test(pathName))?'index.md':'.md');
         editBtn.setAttribute('href', editHref);
     }
