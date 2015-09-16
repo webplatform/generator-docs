@@ -24,6 +24,7 @@
 
 # Redirect loops
 rewrite (?i)^/Meta/web(\ |_)platform(\ |_)wednesday$ /Meta/web_platform_wednesday break;
+rewrite (?i)^/Meta/?$ /Meta/Index break;
 
 
 

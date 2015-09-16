@@ -10,7 +10,7 @@ The content itself is pulled in this workspace as git submodule so we can compil
 To get the docs pages, refer to the following git repositories.
 
 | Directory     | Submodule                          | Note                |
-|--------------:|:----------------------------------:|---------------------|
+|---------------|------------------------------------|---------------------|
 | **src/**      | [webplatform/docs][docs]           | The main docs pages |
 | **src/Meta/** | [webplatform/docs-meta][docs-meta] | Archived content that needed to be moved during mass imports. We kept them there to cherry-pick and merge into the main content section. Was accessible under the URL *docs.webplatform.org/wiki/Meta:...* |
 | **src/WPD/**  | [webplatform/docs-wpd][docs-wpd]   | Community and notes section. Was accessible under the URL *docs.webplatform.org/wiki/WPD:...* |
@@ -30,7 +30,7 @@ To test out the latest run, use the following static web server.
 http://67.205.56.184/
 
 
-### Tasks
+### Expected steps
 
 What’s left to do prior to use this project to replace WebPlatform Docs MediaWiki instance.
 

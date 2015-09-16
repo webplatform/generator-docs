@@ -23,6 +23,7 @@
 
 
 # Redirect loops
+rewrite (?i)^/WPD/?$ /WPD/Index break;
 
 
 
