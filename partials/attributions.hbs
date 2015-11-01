@@ -1,8 +1,6 @@
-{{!<h2>Attributions</h2>
-{{attributions.length}}
+<h2>Attributions</h2>
 <ul>
 {{#attributions}}
-	<li>Hi</li>
+	<li>{{#markdown}}{{.}}{{/markdown}}</li>
 {{/attributions}}
 </ul>
-}}
