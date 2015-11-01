@@ -168,6 +168,22 @@ function mainEditButton(){
 
 
 
+
+function readinessMarker() {
+    /* value could also be document.head.children.readiness.content||null */
+    var  value = $('meta[name=readiness]').attr('content')
+        ,template = '<div class="readiness-state {0}"><p>This page is <a>{1}</a></p></div>';
+
+    if ( value !== null ) {
+        $(template.format(value.replace(/\s/g, '_'), value)).prependTo('body');
+    }
+
+}
+
+
+
+
+
 /*
  * Strig.format polyfill
  */
@@ -202,6 +218,7 @@ if (!String.prototype.format) {
             }, true);
         }
 
+        readinessMarker();
         mainEditButton();
         mainToc();
     }

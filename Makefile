@@ -1,7 +1,7 @@
 SHELL := bash
 PATH := bin:${PATH}
 DATE := `date '+%Y%m%d'`
-THIS_DIR:=$(shell pwd)
+
 
 build: src/ node_modules/ static/assets/css/highlight.css
 		time npm run build
@@ -27,6 +27,7 @@ node_modules: package.json
 rsync:
 		rsync -az --delete --progress --exclude=".git" build/ upstream-docs1.staging.wpdn:/srv/webapps/docs/build/
 		rsync -az config/nginx/ upstream-docs1.staging.wpdn:/etc/nginx/docs/
+
 
 nas:
 		rsync -a --delete --progress --exclude=".git" build/ /Volumes/web/webplatform/

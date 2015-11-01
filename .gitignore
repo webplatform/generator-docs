@@ -1,5 +1,6 @@
-.npm
+.npm/
 node_modules/
+bower_components/
 build/
 npm-debug.log
 src/

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="client-nojs">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>{{title}} · WebPlatform Docs</title>
     <link rel="stylesheet" href="/assets/css/docs.css" />
     <link rel="stylesheet" href="/assets/css/highlight.css" />
-    <style>body{background-color:#efeadd !important;}.Almost_Ready{background:#E3CE21;}.In_Progress{background:#F29A3D;}.Not_Ready{background:#CF4732;}.Not_Ready p,.Not_Ready p a{color:#fff;}.Out_of_Date{background:#aaa;}.Ready_to_Use{background:#7BC649;}.readiness-state{-ms-transform:rotate(-90deg);-webkit-transform:rotate(-90deg);border-radius:0 25px 25px 0;box-sizing:border-box;left:-981px;padding:0 45px 0 20px;position:fixed;top:987px;transform:rotate(-90deg);width:2000px;}.readiness-state p{background:url(//www.webplatform.org/assets/white-circle.svg) right center no-repeat;box-sizing:border-box;color:#333;font-family:Bitter,Cambria,Georgia,serif;font-style:italic;margin:0 -34px 0 0;padding:6px 140px 6px 20px;text-align:right;}.readiness-state p a{color:#333;font-size:18px;font-style:normal;font-weight:700;margin-left:6px;text-decoration:underline;}#main-content img{max-width:100%;}</style>
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <!--[if lt IE 7]><script src="//www.webplatform.org/assets/bower_components/ie7-js/lib/IE7.js"></script><![endif]-->
@@ -13,6 +12,8 @@
     <!--[if lt IE 9]><script src="//www.webplatform.org/assets/bower_components/ie7-js/lib/IE9.js"></script><![endif]-->
     <!--[if lt IE 9]><script src="//docs.webplatform.org/w/extensions/WebPlatformDocs/skin/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 8]><link rel="stylesheet" href="//www.webplatform.org/assets/css/ie7.css"><![endif]-->
+    {{>metadata}}
+
   </head>
   <body class="mediawiki ltr sitedir-ltr skin-webplatform action-view">
     <header id="mw-head" class="noprint">
@@ -66,6 +67,7 @@
             <div id="main-content">
               <h1>{{title}}</h1>
 {{{ contents }}}
+{{>attributions}}
             </div>
             <div class="topics-nav">
               <ul>

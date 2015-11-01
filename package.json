@@ -2,32 +2,37 @@
   "name": "generator-docs",
   "version": "2.0.0",
   "description": "WebPlatform Docs Static site generator",
-  "author": "Renoir Boulanger <renoir@w3.org>",
+  "homepage": "https://github.com/webplatform/generator-docs#readme",
   "license": "CC-BY-3.0",
-  "main": "build.js",
-  "engines": {
-    "node": ">=0.12"
-  },
+  "authors": [
+    "Renoir Boulanger <hello@renoirboulanger.com>"
+  ],
   "bugs": {
     "url": "https://github.com/webplatform/generator-docs/issues"
   },
-  "homepage": "https://github.com/webplatform/generator-docs#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webplatform/generator-docs.git"
   },
+  "main": "build.js",
+  "engines": {
+    "node": ">=4"
+  },
   "scripts": {
     "serve": "node serve",
-    "build": "node --harmony build"
+    "build": "node build"
   },
   "dependencies": {
-    "express": "^4.13.3",
     "handlebars": "^2.0",
+    "remarkable": "^1.6.0",
     "highlight.js": "^8.8.0",
     "metalsmith": "~2",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-changed": "~0.2",
     "metalsmith-layouts": "~1.4",
     "metalsmith-markdown-remarkable": "^0.1.1"
+  },
+  "devDependencies": {
+    "express": "^4.13.3"
   }
 }

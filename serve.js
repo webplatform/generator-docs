@@ -1,3 +1,13 @@
+
+/**
+ * A minimal webserver for local development
+ *
+ * Use with `make serve`.
+ *
+ * To serve site for production, refer to notes
+ * in README.md
+ */
+
 var express = require('express');
 var app = express();
 
