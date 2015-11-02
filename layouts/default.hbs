@@ -61,7 +61,7 @@
                 <div><a class="highlighted edit button" text="Edit" href="https://github.com/webplatform/docs/blob/master">Edit</a></div>
                 <div class="dropdown"><a class="tools button">Tools</a>
                     <ul>
-                        <li><a data-pivot-trigger="history" href="?action=history" rel="archives">History</a></li>
+                        <li><a href="/_internal/history.html?path={{#urlencode}}{{uri}}{{/urlencode}}" rel="archives">History</a></li>
                     </ul>
                 </div>
                 {{/if}}
@@ -71,13 +71,8 @@
           <div id="page-content">
             <div id="main-content">
               <h1>{{title}}</h1>
-              <section class="contents-pivot" data-pivot="contents">
 {{{ contents }}}
 {{>attributions}}
-              </section>
-              <section class="contents-pivot pivot-history" data-pivot="history" style="display:none" id="history">
-
-              </section>
             </div>
             <div class="topics-nav">
               <ul>
