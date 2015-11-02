@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="/assets/css/highlight.css" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
-    <!--[if lt IE 7]><script src="//www.webplatform.org/assets/bower_components/ie7-js/lib/IE7.js"></script><![endif]-->
-    <!--[if lt IE 8]><script src="//www.webplatform.org/assets/bower_components/ie7-js/lib/IE8.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="//www.webplatform.org/assets/bower_components/ie7-js/lib/IE9.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="//docs.webplatform.org/w/extensions/WebPlatformDocs/skin/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 7]><script src="/bower_components/ie7-js/lib/IE7.js"></script><![endif]-->
+    <!--[if lt IE 8]><script src="/bower_components/ie7-js/lib/IE8.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="/bower_components/ie7-js/lib/IE9.js"></script><![endif]-->
     <!--[if lt IE 8]><link rel="stylesheet" href="//www.webplatform.org/assets/css/ie7.css"><![endif]-->
     {{>metadata}}
-
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/vue/dist/vue.min.js"></script>
   </head>
   <body class="mediawiki ltr sitedir-ltr skin-webplatform action-view">
+    {{#readiness_marker}}{{readiness}}{{/readiness_marker}}
     <header id="mw-head" class="noprint">
       <div class="container">
         <div id="p-logo">
@@ -49,25 +50,34 @@
         <a id="top"></a>
         <div class="tool-area">
               <div id="hierarchy-menu">
-                <ol id="breadcrumb-info" class="breadcrumbs">
-                  <li><a href="/">DOCS</a></li>
-                </ol>
+                  {{>breadcrumb}}
               </div>
               <div class="toolbar">
+                {{#if uri}}
+                {{! If we do not have an uri front matter, we might }}
+                {{! not want edit buttons. Notice that we gotta }}
+                {{! make sure the content pages always has an uri }}
+                {{! front-matter. }}
                 <div><a class="highlighted edit button" text="Edit" href="https://github.com/webplatform/docs/blob/master">Edit</a></div>
                 <div class="dropdown"><a class="tools button">Tools</a>
                     <ul>
-                        <li><a href="?action=history" rel="archives">History</a></li>
+                        <li><a data-pivot-trigger="history" href="?action=history" rel="archives">History</a></li>
                     </ul>
                 </div>
+                {{/if}}
             </div>
         </div>
         <div id="page">
           <div id="page-content">
             <div id="main-content">
               <h1>{{title}}</h1>
+              <section class="contents-pivot" data-pivot="contents">
 {{{ contents }}}
 {{>attributions}}
+              </section>
+              <section class="contents-pivot pivot-history" data-pivot="history" style="display:none" id="history">
+
+              </section>
             </div>
             <div class="topics-nav">
               <ul>
@@ -99,7 +109,6 @@
         </ul -->
       </div>
     </footer>
-    <script src="/assets/js/dependencies.js" async defer></script>
-    <script src="/assets/js/docs.js" async defer></script>
+    <script src="/assets/js/docs.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@ PATH := bin:${PATH}
 DATE := `date '+%Y%m%d'`
 
 
-build: src/ node_modules/ static/assets/css/highlight.css
+build: src/ node_modules/ static/bower_components/ static/assets/css/highlight.css
 		time npm run build
 
 
@@ -15,16 +15,18 @@ src:
 			cd ..;\
 		fi
 
+static/bower_components/: node_modules/
+		node_modules/.bin/bower install
 
-static/assets/css/highlight.css: node_modules/
+static/assets/css/highlight.css: node_modules
 		cp node_modules/highlight.js/styles/solarized_dark.css static/assets/css/highlight.css
 
 
-node_modules: package.json
+node_modules/: package.json
 		npm install
 
 
-rsync:
+rsync: build
 		rsync -az --delete --progress --exclude=".git" build/ upstream-docs1.staging.wpdn:/srv/webapps/docs/build/
 		rsync -az config/nginx/ upstream-docs1.staging.wpdn:/etc/nginx/docs/
 

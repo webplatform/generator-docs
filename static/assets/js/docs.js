@@ -169,15 +169,65 @@ function mainEditButton(){
 
 
 
-function readinessMarker() {
-    /* value could also be document.head.children.readiness.content||null */
-    var  value = $('meta[name=readiness]').attr('content')
-        ,template = '<div class="readiness-state {0}"><p>This page is <a>{1}</a></p></div>';
 
-    if ( value !== null ) {
-        $(template.format(value.replace(/\s/g, '_'), value)).prependTo('body');
+
+function initHistory () {
+    'use strict';
+    // http://jsfiddle.net/renoirb/ts9p2n2n/2/
+    // http://vuejs.org/examples/commits.html
+    // https://github.com/webplatform/mediawiki-conversion/issues/15
+    var triggerNode = document.querySelectorAll('a[data-pivot-trigger]')[0] || null
+      , sectionNode = document.querySelectorAll('section[data-pivot=history]')[0] || null
+      , triggerName = (!!triggerNode) ? triggerNode.dataset.pivotTrigger : null
+      , historyTemplate = [
+            '<ul><li v-repeat="commits"><a href="{{html_url}}" ',
+            'target="_blank" class="commit">{{sha.slice(0, 7)}}',
+            '</a> - <span class="message">{{commit.message | ',
+            'truncate}}</span><br> by <span class="author">',
+            '{{commit.author.name}}</span> at <span class="date"',
+            '>{{commit.author.date | formatDate}}</span></li></ul>'];
+
+    if ( !! triggerNode && !! sectionNode ) {
+        triggerNode.addEventListener('click', function historyHandler (evt) {
+            evt.preventDefault();
+            var apiURL = 'https://api.github.com/repos/webplatform/docs/commits?per_page=20&sha='
+              , historyVue = new Vue({
+              el: '#history',
+              data: {
+                branches: ['master', 'manual-edits'],
+                currentBranch: 'manual-edits',
+                commits: null
+              },
+              created: function () {
+                this.fetchData()
+                this.$watch('currentBranch', function () {
+                  this.fetchData()
+                })
+              },
+              filters: {
+                truncate: function (v) {
+                  var newline = v.indexOf('\n')
+                  return newline > 0 ? v.slice(0, newline) : v
+                },
+                formatDate: function (v) {
+                  return v.replace(/T|Z/g, ' ')
+                }
+              },
+              methods: {
+                fetchData: function () {
+                  var xhr = new XMLHttpRequest()
+                  var self = this
+                  xhr.open('GET', apiURL + self.currentBranch)
+                  xhr.onload = function () {
+                    self.commits = JSON.parse(xhr.responseText)
+                  }
+                  xhr.send()
+                }
+              }
+            });
+        });
+        sectionNode.innerHTML = historyTemplate.join('');
     }
-
 }
 
 
@@ -218,7 +268,7 @@ if (!String.prototype.format) {
             }, true);
         }
 
-        readinessMarker();
+        initHistory();
         mainEditButton();
         mainToc();
     }

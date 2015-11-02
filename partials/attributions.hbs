@@ -1,6 +1,10 @@
+{{#if attributions}}
 <h2>Attributions</h2>
 <ul>
 {{#attributions}}
 	<li>{{#markdown}}{{.}}{{/markdown}}</li>
 {{/attributions}}
 </ul>
+{{else}}
+<!-- Attributions: None declared for this document. -->
+{{/if}}

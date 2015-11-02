@@ -22,7 +22,9 @@
     "serve": "node serve",
     "build": "node build"
   },
-  "dependencies": {
+  "devDependencies": {
+    "bower": "*",
+    "express": "^4.13.3",
     "handlebars": "^2.0",
     "remarkable": "^1.6.0",
     "highlight.js": "^8.8.0",
@@ -31,8 +33,5 @@
     "metalsmith-changed": "~0.2",
     "metalsmith-layouts": "~1.4",
     "metalsmith-markdown-remarkable": "^0.1.1"
-  },
-  "devDependencies": {
-    "express": "^4.13.3"
   }
 }
