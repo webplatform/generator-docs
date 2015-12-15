@@ -20,7 +20,8 @@
   },
   "scripts": {
     "serve": "node serve",
-    "build": "node build"
+    "build": "node build",
+    "start": "node build"
   },
   "devDependencies": {
     "bower": "*",

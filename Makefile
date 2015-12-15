@@ -1,6 +1,7 @@
 SHELL := bash
 PATH := bin:${PATH}
 DATE := `date '+%Y%m%d'`
+PWD  :=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 
 build: src/ node_modules/ static/bower_components/ static/assets/css/highlight.css
@@ -15,8 +16,10 @@ src:
 			cd ..;\
 		fi
 
+
 static/bower_components/: node_modules/
 		node_modules/.bin/bower install
+
 
 static/assets/css/highlight.css: node_modules
 		cp node_modules/highlight.js/styles/solarized_dark.css static/assets/css/highlight.css
@@ -37,6 +40,10 @@ nas:
 
 serve:
 		npm run serve
+
+
+docker: src/ node_modules/ static/bower_components/
+		docker run -it --rm -v "${PWD}":/usr/src/app -w /usr/src/app node:4 node build.js
 
 
 .PHONY: build

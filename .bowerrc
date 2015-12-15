@@ -1,4 +1,5 @@
 {
   "analytics": false,
-  "directory": "static/bower_components"
+  "directory": "static/bower_components",
+  "tmp": "./.tmp_bower"
 }
