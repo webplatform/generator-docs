@@ -5,8 +5,13 @@ machine:
 dependencies:
   override:
     - npm install bower -g
+
+test:
+  override:
     - make
+  post:
     - 'find build -type d -name .git -exec rm -rf {} +'
     - 'find build -type f -name .git\* -exec rm {} +'
     - 'mv build/* $CIRCLE_ARTIFACTS/'
+    - test -d build/
 
