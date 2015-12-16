@@ -12,6 +12,5 @@ test:
   post:
     - 'find build -type d -name .git -exec rm -rf {} +'
     - 'find build -type f -name .git\* -exec rm {} +'
-    - 'mv build/* $CIRCLE_ARTIFACTS/'
-    - test -d build/
+    - tar cfjv $CIRCLE_ARTIFACTS/docs.tar.bz2 build/
 
