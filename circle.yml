@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: 4.2.2
+
+dependencies:
+  override:
+    - npm install bower -g
+    - make
+    - 'find build -type d -name .git -exec rm -rf {} +'
+    - 'find build -type f -name .git\* -exec rm {} +'
+    - 'mv build/* $CIRCLE_ARTIFACTS/'
+
