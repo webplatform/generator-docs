@@ -28,6 +28,10 @@ static/assets/css/highlight.css: node_modules
 node_modules/: package.json
 		npm install
 
+package: build/
+		find build -type d -name .git -exec rm -rf {} +
+		find build -type f -name .git\* -exec rm {} +
+		tar cfjv ../docs.tar.bz2 build/
 
 rsync: build
 		rsync -az --delete --progress --exclude=".git" build/ upstream-docs1.staging.wpdn:/srv/webapps/docs/build/
