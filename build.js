@@ -18,6 +18,7 @@ metalsmith(__dirname)
   .use(changed())
   .source("./src")
   .destination("./build")
+  //.concurrency(2024)
   .use(remarkable("full", {
      html: true
     ,breaks: true

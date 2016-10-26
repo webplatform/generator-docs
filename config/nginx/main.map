@@ -22,6 +22,28 @@
 # @author Renoir Boulanger <renoir@w3.org>
 #
 
+location / {
+  fancyindex on;
+  fancyindex_exact_size off;
+  fancyindex_footer /_internal/footer.html;
+  fancyindex_header /_internal/header.html;
+}
+
+merge_slashes on;
+rewrite ^/wiki/(.*)$ /$1        permanent; # MUST be the first
+rewrite ^/$          /Main_Page permanent;
+rewrite /Meta\:(.*)$ /Meta/$1   permanent;
+rewrite /WPD\:(.*)$  /WPD/$1    permanent;
+
+rewrite ^/WPD/Community$          /community  permanent;
+rewrite ^/WPD/Contributors_Guide$ /contribute permanent;
+
+## Images hardcoded in wiki source before we migrated to DreamObjects
+rewrite ^/w/images/(.*)$ /assets/$1;
+
+rewrite ^/((Special|Template|Property|Form|Concept|UserWiki|User_profile).*)$ /disabled?r=$1 permanent;
+#rewrite ^/(w|t|test)/(.*)$ /disabled?r=$1 permanent;
+
 
 
 

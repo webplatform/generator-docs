@@ -22,16 +22,6 @@
         <div id="p-logo">
             <a href="//www.webplatform.org/"  title="Visit the home page"></a>
         </div>
-        <!-- div id="p-search">
-            <label for="searchInput">Search</label>
-            <form action="//docs.webplatform.org/w/index.php" id="searchform">
-                <div id="search">
-                    <input name="search" placeholder="Search..." title="Search WebPlatform Docs [f]" accesskey="f" id="searchInput" />
-                    <input type="submit" title="Search the pages for this text" id="mw-searchButton" class="searchButton" />
-                    <input type='hidden' name="title" value="Special:Search"/>
-                </div>
-            </form>
-        </div -->
       </div>
     </header>
     <nav id="sitenav">
@@ -70,7 +60,9 @@
         <div id="page">
           <div id="page-content">
             <div id="main-content">
-              <h1>{{title}}</h1>
+{{>notice}}
+
+<h1>{{title}}</h1>
 {{{ contents }}}
 {{>attributions}}
             </div>
