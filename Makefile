@@ -1,15 +1,19 @@
 SHELL := bash
-PATH := bin:${PATH}
-DATE := `date '+%Y%m%d'`
-PWD  :=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+PATH  := bin:${PATH}
+DATE  := `date '+%Y%m%d'`
+PWD   := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+.DEFAULT_GOAL := build
+
+# https://www.gnu.org/software/make/manual/make.html
 
 
 .PHONY: build
-build: src node_modules static/bower_components static/assets/css/highlight.css
+build: src/ \
+       static/assets/css/highlight.css
 		time npm run build
 
 
-src:
+src/:
 		@if [[ ! -d src ]]; then\
 			git clone https://github.com/webplatform/docs.git src;\
 			cd src;\
@@ -18,16 +22,16 @@ src:
 		fi
 
 
-static/bower_components: node_modules
+static/bower_components/: node_modules/
 		node_modules/.bin/bower install
 
 
-static/assets/css/highlight.css: node_modules
+static/assets/css/highlight.css: node_modules/
 		cp node_modules/highlight.js/styles/solarized_dark.css static/assets/css/highlight.css
 
 
-node_modules: package.json
-		npm install
+node_modules/: package.json
+		yarn install
 
 
 .PHONY: package

@@ -28,13 +28,15 @@
     <div class="container">
       <ul class="links">
           <li><a href="/" class="active">THE DOCS</a></li>
-          <li><a href="/Community">COMMUNITY</a></li>
+          <li><a href="/Community">CONNECT</a></li>
           <li><a href="/Contributing">CONTRIBUTE</a></li>
           <li><a href="//www.webplatform.org/blog/">BLOG</a></li>
-          <li><a href="https://github.com/webplatform/docs/issues">ISSUES</a></li>
       </ul>
     </div>
     </nav>
+
+    {{>notice}}
+
     <div id="content" class="mw-body">
       <div class="container">
         <a id="top"></a>
@@ -51,7 +53,7 @@
                 <div><a class="highlighted edit button" text="Edit" href="https://github.com/webplatform/docs/blob/master">Edit</a></div>
                 <div class="dropdown"><a class="tools button">Tools</a>
                     <ul>
-                        <li><a href="/_internal/history.html?path={{#urlencode}}{{uri}}{{/urlencode}}" rel="archives">History</a></li>
+                        <li><a href="/_internal/history.html?path={{#history_urlencode}}{{uri}}{{/history_urlencode}}" rel="archives">History</a></li>
                     </ul>
                 </div>
                 {{/if}}
@@ -60,7 +62,6 @@
         <div id="page">
           <div id="page-content">
             <div id="main-content">
-{{>notice}}
 
 <h1>{{title}}</h1>
 {{{ contents }}}

@@ -3,19 +3,23 @@
  * Build static HTML files using Metalsmith
  */
 
-var  metalsmith = require("metalsmith")
-    ,changed = require("metalsmith-changed")
-    ,layouts = require("metalsmith-layouts")
-    ,assets = require("metalsmith-assets")
-    ,remarkable = require("metalsmith-markdown-remarkable")
-    ,remarkableHighlighter = require("./lib/remarkable/highlighter")
-    ,remarkableExtender = require("./lib/remarkable")
-    ,handlebarsExtender = require("./lib/handlebars")()
-    ,pkg = require("./package.json");
+var metalsmith = require("metalsmith")
+  , changed = require("metalsmith-changed")
+  , ignore = require("metalsmith-ignore")
+  , layouts = require("metalsmith-layouts")
+  , assets = require("metalsmith-assets")
+  , remarkable = require("metalsmith-markdown-remarkable")
+  , remarkableHighlighter = require("./lib/remarkable/highlighter")
+  , remarkableExtender = require("./lib/remarkable")
+  , handlebarsExtender = require("./lib/handlebars")()
+  , pkg = require("./package.json");
 
 metalsmith(__dirname)
   .clean(false)
   .use(changed())
+  .use(ignore([
+    ".git"
+  ]))
   .source("./src")
   .destination("./build")
   //.concurrency(2024)

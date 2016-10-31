@@ -27,7 +27,7 @@ Any page you can see on *docs.webplatform.org* should be visible on the new vers
 
 To test out the latest run, use the following static web server.
 
-http://67.205.56.184/
+http://67.205.62.59/
 
 
 ### Expected steps
@@ -38,11 +38,11 @@ Roughly [all issues described in **webplatform/mediawiki-conversion**](https://g
 
 * [x] [Convert MediaWiki history into Git source-controlled text files](https://github.com/webplatform/mediawiki-conversion/issues/4)
 * [x] [Pass a filter to every page to make it suitable for a static site generator](https://github.com/webplatform/mediawiki-conversion/issues/9)
-* [ ] [Reproduce directory listing for pages without content](https://github.com/webplatform/mediawiki-conversion/issues/3)
+* [x] [Reproduce directory listing for pages without content](https://github.com/webplatform/mediawiki-conversion/issues/3)
 * [x] [Make sure all uploads are visible from generated site](https://github.com/webplatform/mediawiki-conversion/issues/5)
 * [ ] ~~[Reproduce search functionality](https://github.com/webplatform/mediawiki-conversion/issues/8)~~ (at least leave metadata to help making the feature)
-* [ ] [Ensure ALL URLs are kept with appropriate redirects](https://github.com/webplatform/mediawiki-conversion/issues/6) (almost there! **needs testing**)
-* [ ] [Get list of views the static site won’t be reproducing anymore so we can create appropriate "410 Gone" response #11](https://github.com/webplatform/mediawiki-conversion/issues/11)
+* [x] [Ensure ALL URLs are kept with appropriate redirects](https://github.com/webplatform/mediawiki-conversion/issues/6) (almost there! **needs testing**)
+* [x] [Get list of views the static site won’t be reproducing anymore so we can create appropriate "410 Gone" response #11](https://github.com/webplatform/mediawiki-conversion/issues/11)
 
 
 

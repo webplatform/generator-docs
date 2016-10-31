@@ -32,17 +32,18 @@ location / {
 merge_slashes on;
 rewrite ^/wiki/(.*)$ /$1        permanent; # MUST be the first
 rewrite ^/$          /Main_Page permanent;
-rewrite /Meta\:(.*)$ /Meta/$1   permanent;
-rewrite /WPD\:(.*)$  /WPD/$1    permanent;
 
-rewrite ^/WPD/Community$          /community  permanent;
-rewrite ^/WPD/Contributors_Guide$ /contribute permanent;
+rewrite ^/WPD/Community$          /Community         permanent;
+rewrite ^/WPD/Contributors_Guide$ /CONTRIBUTING.html permanent;
+rewrite ^/WPD/Contributing$       /CONTRIBUTING.html permanent;
+rewrite (?i)^/Contribut(e|ing)$   /CONTRIBUTING.html permanent;
+rewrite ^/WPD/Contribute$         /CONTRIBUTING.html permanent;
+
+rewrite /Meta\:(.*)$              /Meta/$1           permanent;
+rewrite /WPD\:(.*)$               /WPD/$1            permanent;
 
 ## Images hardcoded in wiki source before we migrated to DreamObjects
 rewrite ^/w/images/(.*)$ /assets/$1;
-
-rewrite ^/((Special|Template|Property|Form|Concept|UserWiki|User_profile).*)$ /disabled?r=$1 permanent;
-#rewrite ^/(w|t|test)/(.*)$ /disabled?r=$1 permanent;
 
 
 
