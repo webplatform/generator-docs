@@ -41,12 +41,20 @@ package: build
 		tar cfjv ../docs.tar.bz2 build/
 
 
+## Use local Node.js reading serve script from package.json 
 .PHONY: serve
 serve:
 		npm run serve
 
 
-.PHONY: docker
-docker: src node_modules static/bower_components
+## Build a nginx 1.9+ Docker container for NGINX confiration testing
+.PHONY: nginx-extras
+nginx-extras:
+		docker build --rm --no-cache -t nginx-extras - < config/nginx-extras/Dockerfile
+
+
+## Build pages using Docker, instead of local Node.js
+.PHONY: docker-build
+docker-build: src node_modules static/bower_components
 		docker run -it --rm -v "${PWD}":/usr/src/app -w /usr/src/app node:4 node build.js
 
