@@ -24,6 +24,6 @@ services:
         - NGINX_PORT=80
     volumes:
         - "./build:/usr/share/nginx/html:ro"
-        - "./config/nginx-server.conf:/etc/nginx/sites-enabled/default:ro"
-        - "./config/nginx:/etc/nginx/docs:ro"
+        - "./config/nginx/sites-enabled:/etc/nginx/sites-enabled:ro"
+        - "./config/nginx/maps:/etc/nginx/maps:ro"
         - "./logs:/var/log/nginx"

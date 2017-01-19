@@ -1,7 +1,8 @@
 FROM debian:jessie
 
-# https://wiki.debian.org/DebianExperimental
-# https://packages.debian.org/experimental/nginx-extras
+## TODO: Make this a shell script or run those inside a blank Debian Jessie VM
+## https://wiki.debian.org/DebianExperimental
+## https://packages.debian.org/experimental/nginx-extras
 RUN    echo "deb http://httpredir.debian.org/debian jessie-backports main" >> /etc/apt/sources.list \
     && apt-get update \
     && apt-get upgrade -y \
