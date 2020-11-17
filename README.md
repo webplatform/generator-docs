@@ -1,7 +1,5 @@
 # WebPlatform Docs static site generator
 
-**In progress, refer to the [Progress report](#progress-report)**
-
 This repository serves as a static-site generator for *docs.webplatform.org*, anything related generating HTML.
 
 No content should be stored in this repo, but only what it takes to generate the docs pages.
@@ -14,20 +12,6 @@ To get the docs pages, refer to the following git repositories.
 | **src/**      | [webplatform/docs][docs]           | The main docs pages |
 | **src/Meta/** | [webplatform/docs-meta][docs-meta] | Archived content that needed to be moved during mass imports. We kept them there to cherry-pick and merge into the main content section. Was accessible under the URL *docs.webplatform.org/wiki/Meta:...* |
 | **src/WPD/**  | [webplatform/docs-wpd][docs-wpd]   | Community and notes section. Was accessible under the URL *docs.webplatform.org/wiki/WPD:...* |
-
-
-## Progress report
-
-End goal is to have a (almost) fully functional site without using any backend technology.
-
-Any page you can see on *docs.webplatform.org* should be visible on the new version.
-
-
-### Staging version
-
-To test out the latest run, use the following static web server.
-
-http://67.205.62.59/
 
 
 ### Expected steps
